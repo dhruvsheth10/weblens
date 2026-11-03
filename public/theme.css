@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Google Sans';
+  src: url('./fonts/google-sans-latin.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+:root {
+  color-scheme: light;
+  font-family: 'Google Sans', sans-serif;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  --paper: #f8f9fc;
+  --surface: #ffffff;
+  --ink: #272638;
+  --muted: #656579;
+  --line: #e3e3ed;
+  --accent: #6550ad;
+  --accent-hover: #53408f;
+  --soft-accent: #eeebfa;
+  --ocean: #14776f;
+  --soft-ocean: #e6f5f1;
+  --warning: #886212;
+  --soft-warning: #fcf4df;
+  --error: #a13850;
+  --soft-error: #fceef1;
+}

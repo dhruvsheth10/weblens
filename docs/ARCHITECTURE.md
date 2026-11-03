@@ -1,0 +1,17 @@
+# Local detection architecture
+
+The React UI keeps the existing layout and controls. `src/detection/client.ts` sends work to its module worker, which POSTs a multipart image and transformation name to `/api/detect`. Vite proxies `/api` to the loopback-only FastAPI service on port 8000. The extension worker uses that same loopback service directly.
+
+FastAPI initializes the compact FerretNet-B model once, verifies its pinned weights, and serializes inference requests. FiSeR + DEAR-r and their heavy libraries load only if selected. Missing models or malformed image input produce errors rather than placeholder scores. The backend accepts JPEG, PNG, WebP and AVIF, up to 20 MiB and 40 megapixels, with at least 128 pixels per side. Ferret also accepts the primary JPEG frame in MPO images. EXIF orientation and transparency handling precede inference. Images are not sent to external servers.
+
+FerretNet-B analyzes a native 256-pixel center crop, pads small images with black, normalizes RGB channels, subtracts a masked 3×3 local median, and runs a 1.06-million-parameter CNN. It applies no resizing or JPEG re-encoding in the ordinary path. Cropping happens in PIL before a tensor is allocated; this preserves the original pixels, rounding, scores, and released checkpoint while avoiding a full-size tensor allocation. Optional JPEG/resize resilience checks are separate model passes, disabled by default.
+
+FiSeR uses the released 224-pixel processor and normalized layer-18 CLS representation, followed by a project-specific trained linear head. DEAR-r restores its published channel gate and classifies native-resolution RGB windows. Both logits are calibrated separately and receive equal weights in the ensemble. The precise preprocessing/fusion fingerprint is shared by the API, UI and evaluator.
+
+The generated profile hashes weights, processor configuration, classification head, and vendored DEAR inference code. Component outputs are preserved in JSON exports. The overall logit is the inverse sigmoid of the combined score, maintaining the existing evaluation contract. CPU, MPS, and CUDA outputs must be benchmarked separately.
+
+`backend/assets.py` pins every source revision. `backend/train_head.py` builds the FiSeR head using the training split, selects scaling and an operating point on the calibration split, and reports validation without tuning it. Source-group IDs stay in one split across generator/style directories. The model is entirely offline after setup. Setup downloads are a separate operation.
+
+`npm run dev` starts the backend, waits for model readiness, then starts Vite. It shuts down its own child processes when stopped. `npm run backend` supports running the backend separately. The lab cancellation terminates its worker and discards stale results; model inference already started on the backend may finish before the next queued image begins.
+
+The [local benchmark MCP](BENCHMARK-MCP.md) runs versioned numerical profiles in isolated subprocesses, saves per-image scores and timing, and enforces calibration-only scope. The 2026-10-11 experiment tried 60 crop/aggregation/head pipelines at strict and balanced operating points. The frozen candidate failed its reserved calibration audit, so the deployed model and threshold remain the original FerretNet-B. Prototype heads live in `backend/ferret_adapted.py` and are available to the MCP, not selected automatically by the application.

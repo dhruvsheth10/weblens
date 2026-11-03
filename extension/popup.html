@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preload" href="fonts/google-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="popup.css">
+  <title>Reddit Lens</title>
+</head>
+<body>
+  <header><span class="mark" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 3H5a2 2 0 0 0-2 2v3m13-5h3a2 2 0 0 1 2 2v3M3 16v3a2 2 0 0 0 2 2h3m13-5v3a2 2 0 0 1-2 2h-3"/><circle cx="12" cy="12" r="4"/></svg></span><h1>Reddit Lens</h1><small>Experimental</small></header>
+  <main>
+  <section class="scanner-state" id="scanner-state" data-mode="checking" aria-label="Scanner status">
+    <div><span class="state-dot" aria-hidden="true"></span><strong id="scanner-label" role="status">Connecting…</strong></div>
+    <p id="scanner-detail">Checking your Reddit tab and local detector.</p><small id="scanner-counts"></small>
+  </section>
+  <label class="select-field"><span>Detection model</span><select id="model"></select></label>
+  <div class="scan-controls">
+    <label><span><strong>Run Reddit Lens</strong><small>Mark images as you browse</small></span><input type="checkbox" role="switch" id="enabled"></label>
+    <label><span><strong>Scan the feed</strong><small id="feed-help">Check images as you scroll</small></span><input type="checkbox" role="switch" id="feed"></label>
+  </div>
+  <details class="advanced"><summary>Image source &amp; badge guide</summary>
+    <label class="select-field"><span>Image source</span><select id="source" aria-describedby="source-help"><option value="preview-first">Preview first</option><option value="prefer-original">Original first</option><option value="displayed">Displayed image only</option></select></label>
+    <p class="help" id="source-help"></p>
+    <div class="legend" aria-label="Image badge meanings"><span><i class="ai"></i>AI signal detected</span><span><i class="uncertain"></i>Uncertain AI signal</span><span><i class="clear"></i>Scanned · no strong AI signal</span><small>Scores are model signals, not probabilities or proof of origin.</small></div>
+  </details>
+  <button id="lab">Image lab &amp; settings <span aria-hidden="true">↗</span></button>
+  <p id="status" role="status"></p>
+  </main>
+  <footer><span class="local-dot" aria-hidden="true"></span> Local analysis · images stay on your device</footer>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

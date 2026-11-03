@@ -1,0 +1,10 @@
+{
+  "schemaVersion": 1,
+  "kind": "mirror",
+  "model": "mirror-h-v1",
+  "checkpointSha256": "829ef07b52caa26c1cb3917e603a275cfd1c7f494f7b750f86fb218710ac66d5",
+  "upstreamCommit": "adb928ec56c4ffd77c53ccb908bea29bb559922c",
+  "threshold": 0.5,
+  "pipeline": "mirror-h-fp32-eager-shortmax512-crop224-pngjpeg96-v1",
+  "modelHash": "8e96ce9b9b1b3c3ef5441bf1ea7f69ef4172ba08386e2abea9289183f55f8f5d"
+}

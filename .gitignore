@@ -1,0 +1,16 @@
+node_modules/
+dist/
+extension-dist/
+**/.venv/
+backend/models/
+backend/data/
+**/__pycache__/
+artifacts/
+datasets/
+research/reviewers/third_party/
+.DS_Store
+*.partial
+*.key
+.env
+.env.*
+video/transcript.json

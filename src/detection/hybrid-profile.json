@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "model": "ferretnet-opensynthid-v1",
+  "pipeline": "ferret256-opensynthid512-max-centered-logits-v1",
+  "checkpointSha256": {
+    "ferretnet": "fe755d78370bb6547070329553572405b4ecebd23382c9a6cbb11c4ab85a82c2",
+    "opensynthid": "8e910c0e32f86c69761d85ff884dbe0c37e25feac501454080b1ab63fde46496"
+  },
+  "componentThresholds": {
+    "ferretnet": 0.8304235935211183,
+    "opensynthid": 0.9013915360638743
+  },
+  "fusion": "max-threshold-centered-logits",
+  "threshold": 0.5,
+  "watermarkVerified": false,
+  "modelHash": "6fafa513baa3f68af32dc9809251f138ec084b6ab486adf5d0a2495689eb3389"
+}

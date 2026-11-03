@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "kind": "reddit-student",
+  "model": "reddit-sherlock-1.0",
+  "pipeline": "community-vit-s224-full-finetune-v2",
+  "checkpointSha256": "bfaff951884075828fcc81bfe66cbce6b1da81779df38ea61e570e6947ca801a",
+  "sourceCheckpointSha256": "a6cc439d5a6d2dfadd60c77d27a2838ad55b34e601ecd30f46ad97266d6ac4e0",
+  "checkpointPath": "artifacts/reddit-student-v2-2026-10-16/models/sherlock-bfaff951884075828fcc81bfe66cbce6b1da81779df38ea61e570e6947ca801a.safetensors",
+  "logitOffset": 3.3447683883667,
+  "threshold": 0.5,
+  "trainingHash": "2cbdec1ae7bba378c20a702f9b44b3abc50a7f32e79a7d3e5408a3fef1ed5521",
+  "modelHash": "b462f66be9a85627323f2c1699e00f26b1f0dabf68f0fc1fa19cf6d3cd70adde"
+}

@@ -1,0 +1,7 @@
+.venv/
+out/
+review/
+public/clips/
+public/stills/
+public/audio/
+transcript.json

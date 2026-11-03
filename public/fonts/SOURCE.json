@@ -1,0 +1,9 @@
+{
+  "family": "Google Sans",
+  "weight": "400\u2013700 variable",
+  "subset": "latin",
+  "css": "https://fonts.googleapis.com/css2?family=Google+Sans:wght@400..700&display=swap",
+  "font": "https://fonts.gstatic.com/s/googlesans/v71/4UasrENHsxJlGDuGo1OIlJfC6l_24rlCK1Yo_Iqcsih3SAyH6cAwhX9RPjIUvbQoi-E.woff2",
+  "license": "https://raw.githubusercontent.com/googlefonts/googlesans/main/OFL.txt",
+  "sha256": "0feef32352366fe225c73de9d355e8922f18cb5eb48e445c71e97388e4f71d98"
+}

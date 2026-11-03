@@ -1,0 +1,4426 @@
+{
+  "profile": {
+    "model": "fiser-dear-r-v1",
+    "pipeline": "fiser-layer18-224-dear-native768-grid4-platt-mean-v1",
+    "modelHash": "81c73e3fcf7112629a384a22f088b98d9138edad127e4d267ff08daaa5c16331",
+    "threshold": 0.7749065220844583,
+    "artifacts": {
+      "models/fiser/model.safetensors": "3bfda6c3040fe22f8fe82588bd4c8506572a6844a04c15bb5c8feebbbd9e11a5",
+      "models/fiser/config.json": "8251d82663238b809deefeaf9db61069fe17172fdc486e70fb92231c46bc9301",
+      "models/fiser/preprocessor_config.json": "960c41d1f3a7778b936365769a2d90550b318a6c0a53a0296957adacfe5e0dd7",
+      "models/dear_r.pth": "430fde11debe1850ab24af43945b4d68f2bb3ee52a837d84cf525eb603ccde97",
+      "models/fiser-head.json": "29c643c47a56bae6b39d43f76652d28891d4b8d3f653aa4893f0022f135097a4",
+      "vendor/dear/nn_classifier/resnet.py": "dfa3616d0a38ec1da3b88c731f700b6494d811028a8c7c018b51c63557bdec53",
+      "vendor/dear/detector/corvi_mask_gated_detector.py": "1709c66d292d5d826c0547f42aaf615109e055192d1b678b2e5150b3b1c6065c",
+      "engine.py": "5a2632f7204a2eeef3b4c1de1885a7c607e1d09060c0e49dfb78371da05ec937"
+    },
+    "calibration": {
+      "fiser": {
+        "a": 2.1408596534600024,
+        "b": 0.20872638438595004,
+        "fitInputMean": -0.013231086544692516,
+        "fitInputStd": 1.1773662614550426
+      },
+      "dear_r": {
+        "a": 2.0851312373789574,
+        "b": 0.024849766195538567,
+        "fitInputMean": 0.05444583117754923,
+        "fitInputStd": 1.473630439887519
+      }
+    },
+    "fusion": "equal mean of separately Platt-scaled scores",
+    "targetEmpiricalFpr": 0.01,
+    "calibrationImages": 120,
+    "calibrationDevice": "mps",
+    "validationIsUntouched": true
+  },
+  "trainingImages": 287,
+  "calibration": {
+    "images": 120,
+    "realImages": 60,
+    "aiImages": 60,
+    "falsePositiveRate": 0.0,
+    "aiRecall": 0.7333333333333333,
+    "auroc": 0.9752777777777778
+  },
+  "validation": {
+    "images": 120,
+    "realImages": 60,
+    "aiImages": 60,
+    "falsePositiveRate": 0.0,
+    "aiRecall": 0.7333333333333333,
+    "auroc": 0.9875
+  },
+  "validationByGenerator": {
+    "FLUX.2": {
+      "images": 75,
+      "realImages": 60,
+      "aiImages": 15,
+      "falsePositiveRate": 0.0,
+      "aiRecall": 0.9333333333333333,
+      "auroc": 1.0
+    },
+    "GPT Image 2": {
+      "images": 75,
+      "realImages": 60,
+      "aiImages": 15,
+      "falsePositiveRate": 0.0,
+      "aiRecall": 0.6,
+      "auroc": 0.9844444444444445
+    },
+    "Nano Banana 2": {
+      "images": 75,
+      "realImages": 60,
+      "aiImages": 15,
+      "falsePositiveRate": 0.0,
+      "aiRecall": 0.4666666666666667,
+      "auroc": 0.9655555555555556
+    },
+    "Qwen Image 2.1": {
+      "images": 75,
+      "realImages": 60,
+      "aiImages": 15,
+      "falsePositiveRate": 0.0,
+      "aiRecall": 0.9333333333333333,
+      "auroc": 1.0
+    }
+  },
+  "excluded": [
+    {
+      "file": "images/Real/Texture Images/0280.jpg",
+      "split": "train",
+      "reason": "Image too small: at least 128 pixels on each edge is required."
+    }
+  ],
+  "limitations": "Small public dataset; not a representative Reddit accuracy claim. Original images only. Eligibility exclusions are recorded.",
+  "rows": [
+    {
+      "remote": "images/Real/Hybrid Images/1941.jpg",
+      "local": "images/Real/Hybrid Images/1941.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1941",
+      "sha256": "f5c8f68ebfc5504ea135db60c5ff1e0294de7515584dd2c40232cd47ef174b5c",
+      "fiserLogit": -1.2594386339187622,
+      "dearLogit": -1.6586960554122925,
+      "score": 0.05399622356384243,
+      "logit": -2.8633324509324454,
+      "componentScores": {
+        "fiser": 0.0767352408755651,
+        "dear_r": 0.031257206252119744
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/0715.jpg",
+      "local": "images/Real/Hybrid Images/0715.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "715",
+      "sha256": "86139be32a26125941f22995954d5e045eeec2005c403d49396133d00d9a9c9d",
+      "fiserLogit": -1.650490403175354,
+      "dearLogit": -0.230865016579628,
+      "score": 0.2112702178025878,
+      "logit": -1.3172858135814571,
+      "componentScores": {
+        "fiser": 0.03473208054876177,
+        "dear_r": 0.38780835505641387
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/0081.jpg",
+      "local": "images/Real/Hybrid Images/0081.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "81",
+      "sha256": "071b6410359d0c655f8c42dd5ee649ccac0ed1da58f7bc0dfe3d8cafebec3e2c",
+      "fiserLogit": -0.936945378780365,
+      "dearLogit": -0.8736252784729004,
+      "score": 0.14222178488635018,
+      "logit": -1.7969578709751264,
+      "componentScores": {
+        "fiser": 0.14219930230172376,
+        "dear_r": 0.14224426747097657
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1541.jpg",
+      "local": "images/Real/Hybrid Images/1541.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1541",
+      "sha256": "777a971fecf97a5c11ee92d06eb1f22881ebf9e0e46e91c4d04e9b3f91bdb3c6",
+      "fiserLogit": -0.9272246360778809,
+      "dearLogit": -1.1734782457351685,
+      "score": 0.1131333195998987,
+      "logit": -2.0591277243266144,
+      "componentScores": {
+        "fiser": 0.14475671969568235,
+        "dear_r": 0.08150991950411504
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/0504.jpg",
+      "local": "images/Real/Hybrid Images/0504.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "504",
+      "sha256": "d5c1f08eeb1b6cfb767cf2c174a4aa20833772d15c08cc5483322c9a2432d265",
+      "fiserLogit": 0.246323361992836,
+      "dearLogit": -1.4234277606010437,
+      "score": 0.363097777063187,
+      "logit": -0.5619439913206645,
+      "componentScores": {
+        "fiser": 0.6761359052108658,
+        "dear_r": 0.05005964891550825
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1825.png",
+      "local": "images/Real/Hybrid Images/1825.png",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1825",
+      "sha256": "a38f0af53f5d08d7bcbe124d9955dadb6e7e2e738da33703a007f5ef5276e50c",
+      "fiserLogit": 0.7347022891044617,
+      "dearLogit": -2.268895149230957,
+      "score": 0.4324279606349575,
+      "logit": -0.27195193541899865,
+      "componentScores": {
+        "fiser": 0.8558968954469047,
+        "dear_r": 0.008959025823010183
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1231.png",
+      "local": "images/Real/Hybrid Images/1231.png",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1231",
+      "sha256": "3f13dd638a051ce9093d9ccd2e4a9c2c7bd8fb57db5de3ddfbcbb3c55b4861de",
+      "fiserLogit": -1.4239925146102905,
+      "dearLogit": -1.9422551393508911,
+      "score": 0.036379296212323886,
+      "logit": -3.2766979289361564,
+      "componentScores": {
+        "fiser": 0.05520879232506744,
+        "dear_r": 0.017549800099580338
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2977.jpg",
+      "local": "images/Real/Hybrid Images/2977.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "2977",
+      "sha256": "55ad8a5382fdbc9f6a8c05c54b29a60508d0e7842a5e01ea409c85a7a514d7de",
+      "fiserLogit": -0.9531956315040588,
+      "dearLogit": -0.7636280357837677,
+      "score": 0.15529677255058555,
+      "logit": -1.6936474076417285,
+      "componentScores": {
+        "fiser": 0.1380083153003602,
+        "dear_r": 0.17258522980081092
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2267.png",
+      "local": "images/Real/Hybrid Images/2267.png",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "2267",
+      "sha256": "a158977a139bfa99f5240805ce7e667e1ec1c25f2d34e9862f72c2e6cc88119c",
+      "fiserLogit": -0.41490477323532104,
+      "dearLogit": -0.35137438774108887,
+      "score": 0.33322474519319495,
+      "logit": -0.6936358669994565,
+      "componentScores": {
+        "fiser": 0.336366990041219,
+        "dear_r": 0.3300825003451709
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1850.png",
+      "local": "images/Real/Hybrid Images/1850.png",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1850",
+      "sha256": "71fdf62c525352d6fc62bcdb5075811bd6a9060f9c936a5b8ae05ac39472684b",
+      "fiserLogit": -1.0039032697677612,
+      "dearLogit": -0.8520938158035278,
+      "score": 0.13670230109806425,
+      "logit": -1.842954012984979,
+      "componentScores": {
+        "fiser": 0.1255940762874728,
+        "dear_r": 0.14781052590865568
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1918.jpg",
+      "local": "images/Real/Hybrid Images/1918.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1918",
+      "sha256": "42d4719a2c75224cb3e17126e8e5760aafbc529573c54eb8dbfd4a75d4b85e80",
+      "fiserLogit": 0.5904152989387512,
+      "dearLogit": -0.9367572069168091,
+      "score": 0.47019866223613155,
+      "logit": -0.11934681086389799,
+      "componentScores": {
+        "fiser": 0.813470866783804,
+        "dear_r": 0.12692645768845912
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1260.jpg",
+      "local": "images/Real/Hybrid Images/1260.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1260",
+      "sha256": "07a14ec060e1b289297df714acc17d024b73b35008b8d272ff0bead1d5207600",
+      "fiserLogit": -1.319860577583313,
+      "dearLogit": -0.2580692768096924,
+      "score": 0.22124399238703882,
+      "logit": -1.2584316540362193,
+      "componentScores": {
+        "fiser": 0.06805802688188732,
+        "dear_r": 0.3744299578921903
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1508.png",
+      "local": "images/Real/Hybrid Images/1508.png",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1508",
+      "sha256": "ba0c26fd5739fd5c035b3725e6ca6e4117f37a10030088d35eea7b9f6884d978",
+      "fiserLogit": -0.9988846182823181,
+      "dearLogit": -0.7964221239089966,
+      "score": 0.14490841499089968,
+      "logit": -1.775106658058118,
+      "componentScores": {
+        "fiser": 0.12677876390372764,
+        "dear_r": 0.16303806607807175
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/0592.jpg",
+      "local": "images/Real/Hybrid Images/0592.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "592",
+      "sha256": "e110d626532d3ad8d621a34fa701ed24d54caf0dba4163dd026ebb7e6115129d",
+      "fiserLogit": 0.8860150575637817,
+      "dearLogit": 0.30271080136299133,
+      "score": 0.7749065220844582,
+      "logit": 1.2362266320850595,
+      "componentScores": {
+        "fiser": 0.8914424344671842,
+        "dear_r": 0.6583706097017321
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/0212.jpg",
+      "local": "images/Real/Hybrid Images/0212.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "212",
+      "sha256": "2499e31a3d3cfd741d56c21026e6ef611ab4710a2659175d5dd7debe6691d03b",
+      "fiserLogit": -0.33539891242980957,
+      "dearLogit": -0.441767821709315,
+      "score": 0.3325833135711189,
+      "logit": -0.6965241723052991,
+      "componentScores": {
+        "fiser": 0.37535397503886764,
+        "dear_r": 0.2898126521033702
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1750.jpg",
+      "local": "images/Real/Hybrid Images/1750.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1750",
+      "sha256": "411590962aed21a27bb085fd9bddc6c0b24f94ac503d7396f211fedc3b86ad8b",
+      "fiserLogit": -1.118429183959961,
+      "dearLogit": -0.9856549501419067,
+      "score": 0.10854767636000442,
+      "logit": -2.1056624671391995,
+      "componentScores": {
+        "fiser": 0.10104440817805947,
+        "dear_r": 0.11605094454194936
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1172.png",
+      "local": "images/Real/Hybrid Images/1172.png",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1172",
+      "sha256": "a4678cf2a984b1f2e26009ff5310e56aa3c01304f5004e99deb96af98b189644",
+      "fiserLogit": -0.7409626245498657,
+      "dearLogit": -0.059891194105148315,
+      "score": 0.3382062392922175,
+      "logit": -0.6712980828596392,
+      "componentScores": {
+        "fiser": 0.20139945493812134,
+        "dear_r": 0.4750130236463136
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/0307.jpg",
+      "local": "images/Real/Hybrid Images/0307.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "307",
+      "sha256": "c5651d5e5afd28564198f1806b611fc0a17c0dad9cc8d25d850d6276e9e7e84d",
+      "fiserLogit": -1.784916639328003,
+      "dearLogit": -0.3804968198140462,
+      "score": 0.17153519950424406,
+      "logit": -1.5747858596723612,
+      "componentScores": {
+        "fiser": 0.026274523429445064,
+        "dear_r": 0.31679587557904304
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1684.jpg",
+      "local": "images/Real/Hybrid Images/1684.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1684",
+      "sha256": "290f003deb8720bc9eae44770516abb614c51a6fca8eb338cec71fca2ddc07b7",
+      "fiserLogit": -1.259227991104126,
+      "dearLogit": -0.19537298381328583,
+      "score": 0.2411421918061374,
+      "logit": -1.1464276518630514,
+      "componentScores": {
+        "fiser": 0.07676719587855681,
+        "dear_r": 0.40551718773371803
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2246.png",
+      "local": "images/Real/Hybrid Images/2246.png",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "2246",
+      "sha256": "490562699a9493786535be18ad79c0b1a68ea5ac36fa6689de4aa9ee253b2360",
+      "fiserLogit": -1.2408981323242188,
+      "dearLogit": -0.5065062642097473,
+      "score": 0.17121529831384527,
+      "logit": -1.577038593919423,
+      "componentScores": {
+        "fiser": 0.07959501117936267,
+        "dear_r": 0.26283558544832786
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Hybrid Images/1941.png",
+      "local": "images/FLUX.2/Hybrid Images/1941.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1941",
+      "sha256": "5e681628ca330deee528969de2e243a5c1ceb399ec5bf04b95c27cfe5025540b",
+      "fiserLogit": 1.8916176557540894,
+      "dearLogit": 2.757653594017029,
+      "score": 0.9914788642599663,
+      "logit": 4.756647996020624,
+      "componentScores": {
+        "fiser": 0.98605256856496,
+        "dear_r": 0.9969051599549728
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Hybrid Images/0504.png",
+      "local": "images/FLUX.2/Hybrid Images/0504.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "504",
+      "sha256": "0d9a95a9a88a57ad85805c2c34e5606916a536b1bb29efbff02b1e323188ad5e",
+      "fiserLogit": 1.8565831184387207,
+      "dearLogit": 1.0965850055217743,
+      "score": 0.947398574261295,
+      "logit": 2.8909766609173757,
+      "componentScores": {
+        "fiser": 0.9849825382989147,
+        "dear_r": 0.9098146102236754
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Hybrid Images/2267.png",
+      "local": "images/FLUX.2/Hybrid Images/2267.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "2267",
+      "sha256": "4551b687ed8559bc0cfe26411089ed7e02d737db5b5acce315645a23cb58e294",
+      "fiserLogit": 0.534683883190155,
+      "dearLogit": 2.2716870307922363,
+      "score": 0.8931036078333817,
+      "logit": 2.1228425285054886,
+      "componentScores": {
+        "fiser": 0.7946864868321526,
+        "dear_r": 0.9915207288346108
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Hybrid Images/1508.png",
+      "local": "images/FLUX.2/Hybrid Images/1508.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1508",
+      "sha256": "4becec483d8e6f0f046a7a0068dc3af87a50733b697bb672447f2865eb5b3ae9",
+      "fiserLogit": 0.7931744456291199,
+      "dearLogit": 1.6950077712535858,
+      "score": 0.9214922336791108,
+      "logit": 2.4627967952436025,
+      "componentScores": {
+        "fiser": 0.8706593924025702,
+        "dear_r": 0.9723250749556515
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Hybrid Images/1172.png",
+      "local": "images/FLUX.2/Hybrid Images/1172.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1172",
+      "sha256": "52655ee445101de7ae5a0b2b195f278089114bf747222ccbdd3cb80f24491292",
+      "fiserLogit": 1.2622255086898804,
+      "dearLogit": 1.1650243252515793,
+      "score": 0.934622724277433,
+      "logit": 2.659968212345615,
+      "componentScores": {
+        "fiser": 0.9483862648504873,
+        "dear_r": 0.9208591837043788
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Hybrid Images/0715.png",
+      "local": "images/GPT Image 2/Hybrid Images/0715.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "715",
+      "sha256": "9c6c9b2214b3754defb13cc39e8eaba208e0bdbb37facf2cece5b2e102580052",
+      "fiserLogit": 1.4221988916397095,
+      "dearLogit": 2.1353299021720886,
+      "score": 0.9757803037366186,
+      "logit": 3.6960712651334675,
+      "componentScores": {
+        "fiser": 0.9627970510021759,
+        "dear_r": 0.9887635564710612
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Hybrid Images/1825.png",
+      "local": "images/GPT Image 2/Hybrid Images/1825.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1825",
+      "sha256": "8a61be5f04225297f5f02219b0c255f0b3a7157d1f2a27890ad9d499643636aa",
+      "fiserLogit": 0.4964272975921631,
+      "dearLogit": 0.8016858547925949,
+      "score": 0.8130369197938441,
+      "logit": 1.469865355007601,
+      "componentScores": {
+        "fiser": 0.7810007075283426,
+        "dear_r": 0.8450731320593454
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Hybrid Images/1850.png",
+      "local": "images/GPT Image 2/Hybrid Images/1850.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1850",
+      "sha256": "f39f7d85d0d602a5a240ad97ec62d429fff82942a4ea72b44699d733213255e0",
+      "fiserLogit": 1.3597524166107178,
+      "dearLogit": 0.019869526227315266,
+      "score": 0.7371323744744789,
+      "logit": 1.0311169081758242,
+      "componentScores": {
+        "fiser": 0.9577007284303379,
+        "dear_r": 0.5165640205186199
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Hybrid Images/0592.png",
+      "local": "images/GPT Image 2/Hybrid Images/0592.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "592",
+      "sha256": "432a5807f59cbaf631872072728e3da63d0401b131682cb1c889aa8e4eaafe56",
+      "fiserLogit": -0.24175934493541718,
+      "dearLogit": 1.2920287549495697,
+      "score": 0.6807645065792811,
+      "logit": 0.7572873867072782,
+      "componentScores": {
+        "fiser": 0.4233963339821889,
+        "dear_r": 0.9381326791763732
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Hybrid Images/0307.png",
+      "local": "images/GPT Image 2/Hybrid Images/0307.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "307",
+      "sha256": "5bdf0f4e6ed5b39fcf6661f712d0187225caa4b038f563bb367ff2eec6d8742a",
+      "fiserLogit": 0.5862762331962585,
+      "dearLogit": 1.5672497351964314,
+      "score": 0.8881512788598316,
+      "logit": 2.0719948333926745,
+      "componentScores": {
+        "fiser": 0.8121225734930883,
+        "dear_r": 0.9641799842265748
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Hybrid Images/0081.png",
+      "local": "images/Nano Banana 2/Hybrid Images/0081.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "81",
+      "sha256": "52dae92c390a926a31d7d401ef4d36bf4a83daea7ab58c754414ca3ed6623119",
+      "fiserLogit": -0.4912477731704712,
+      "dearLogit": -0.12946543842554092,
+      "score": 0.36996985556509976,
+      "logit": -0.5323461356766347,
+      "componentScores": {
+        "fiser": 0.30091044587489446,
+        "dear_r": 0.43902926525530506
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Hybrid Images/1231.png",
+      "local": "images/Nano Banana 2/Hybrid Images/1231.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1231",
+      "sha256": "6c3af9f9dce748c888039d5c69773ac64fb74e446a76f6e3da009f37f4c9353b",
+      "fiserLogit": -0.7302034497261047,
+      "dearLogit": 2.8415375351905823,
+      "score": 0.6012650753702823,
+      "logit": 0.41073904767343883,
+      "componentScores": {
+        "fiser": 0.20512966327019796,
+        "dear_r": 0.9974004874703666
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Hybrid Images/1918.png",
+      "local": "images/Nano Banana 2/Hybrid Images/1918.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1918",
+      "sha256": "a45a1624d39de1844450d79a6d74320b1b11514508351f28f15292cb7ed216ea",
+      "fiserLogit": 0.3780784010887146,
+      "dearLogit": 0.9837568551301956,
+      "score": 0.811584793228509,
+      "logit": 1.4603407967625142,
+      "componentScores": {
+        "fiser": 0.7346099756674889,
+        "dear_r": 0.8885596107895289
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Hybrid Images/0212.png",
+      "local": "images/Nano Banana 2/Hybrid Images/0212.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "212",
+      "sha256": "f1f872d325b1a7def1678c8f81704d79e48f55a18b89e6fec79f189441c13e30",
+      "fiserLogit": -1.216903805732727,
+      "dearLogit": 0.5475780144333839,
+      "score": 0.4229871462652913,
+      "logit": -0.3105227515916662,
+      "componentScores": {
+        "fiser": 0.08344044704756476,
+        "dear_r": 0.7625338454830178
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Hybrid Images/1684.png",
+      "local": "images/Nano Banana 2/Hybrid Images/1684.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1684",
+      "sha256": "fda1292ecd81ec4379ee1008eb09c3caa645889188602dfa91229ced149179a1",
+      "fiserLogit": 0.9503322243690491,
+      "dearLogit": 1.5775313675403595,
+      "score": 0.9344900787107157,
+      "logit": 2.657799408921124,
+      "componentScores": {
+        "fiser": 0.9040670745334006,
+        "dear_r": 0.9649130828880307
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Hybrid Images/1541.png",
+      "local": "images/Qwen Image 2.1/Hybrid Images/1541.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1541",
+      "sha256": "75bb0cb32683f41e89c9a87e32fa3a458b98321959fe1353e69630a2f4dbbfab",
+      "fiserLogit": 1.0600725412368774,
+      "dearLogit": 0.9702316224575043,
+      "score": 0.9041675603434915,
+      "logit": 2.2444134513760243,
+      "componentScores": {
+        "fiser": 0.9225988522409695,
+        "dear_r": 0.8857362684460136
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Hybrid Images/2977.png",
+      "local": "images/Qwen Image 2.1/Hybrid Images/2977.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "2977",
+      "sha256": "d17be4ea95f22093e8b953f67cde751de09798f9bf6c7c4c4fa5fcd4aaa0cabe",
+      "fiserLogit": 1.3129624128341675,
+      "dearLogit": 1.3552840054035187,
+      "score": 0.9494056448772574,
+      "logit": 2.931996140599611,
+      "componentScores": {
+        "fiser": 0.9534515382484715,
+        "dear_r": 0.9453597515060435
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Hybrid Images/1260.png",
+      "local": "images/Qwen Image 2.1/Hybrid Images/1260.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1260",
+      "sha256": "726daf6a94fdc3270f0c5589e8978374815be6cf67ce9cd1aea3e373643a41c4",
+      "fiserLogit": 0.9532213807106018,
+      "dearLogit": 1.438336193561554,
+      "score": 0.9291237501618449,
+      "logit": 2.5733065415737246,
+      "componentScores": {
+        "fiser": 0.9046021833879415,
+        "dear_r": 0.9536453169357483
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Hybrid Images/1750.png",
+      "local": "images/Qwen Image 2.1/Hybrid Images/1750.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "1750",
+      "sha256": "1e35c67e87b7557ad5b83013f754f5b0a149707cdbcd2ee0ee0eaab684123235",
+      "fiserLogit": 0.7845423221588135,
+      "dearLogit": 0.9076524972915649,
+      "score": 0.8702074783407207,
+      "logit": 1.9027944757930646,
+      "componentScores": {
+        "fiser": 0.8685640178342142,
+        "dear_r": 0.8718509388472271
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Hybrid Images/2246.png",
+      "local": "images/Qwen Image 2.1/Hybrid Images/2246.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Hybrid Images",
+      "split": "calibration",
+      "sourceGroup": "2246",
+      "sha256": "496a8a171c984ae3b26a1915e2ab4ac8cf1c080fc4cfc933976a8faa0f5451a4",
+      "fiserLogit": 0.3510792851448059,
+      "dearLogit": 1.4379221200942993,
+      "score": 0.838398290072556,
+      "logit": 1.6463585467868045,
+      "componentScores": {
+        "fiser": 0.7231894454493608,
+        "dear_r": 0.9536071346957512
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1941.jpeg",
+      "local": "images/Real/Structure Images/1941.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1941",
+      "sha256": "cb2a7ac12dc504de49a7e92ef72782be80262899fd33c93940ab5f819def7499",
+      "fiserLogit": -1.7793420553207397,
+      "dearLogit": -1.278592586517334,
+      "score": 0.04655803817625766,
+      "logit": -3.0193788874775933,
+      "componentScores": {
+        "fiser": 0.026581587615482145,
+        "dear_r": 0.06653448873703317
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/0715.jpeg",
+      "local": "images/Real/Structure Images/0715.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "715",
+      "sha256": "253797f24c2ef65c654205d91ab9afada438fce2ec864102357a88b431dd5f4c",
+      "fiserLogit": -0.8715752363204956,
+      "dearLogit": -0.4782607704401016,
+      "score": 0.2172720412525904,
+      "logit": -1.2816349863641676,
+      "componentScores": {
+        "fiser": 0.16013904570900533,
+        "dear_r": 0.27440503679617545
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/0081.jpeg",
+      "local": "images/Real/Structure Images/0081.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "81",
+      "sha256": "6cc30bbec1d2aecef3b4c047258d3006ca7ca3d1b6b75944459fb13177852f7e",
+      "fiserLogit": -1.0921218395233154,
+      "dearLogit": -1.8192075490951538,
+      "score": 0.06442175330349816,
+      "logit": -2.6757134235048117,
+      "componentScores": {
+        "fiser": 0.10627641035959257,
+        "dear_r": 0.022567096247403745
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1541.jpeg",
+      "local": "images/Real/Structure Images/1541.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1541",
+      "sha256": "9ed1d3ad8b49edcc48e96b4bbcd542c42607447b628755128949d4ba19905be1",
+      "fiserLogit": -0.30444008111953735,
+      "dearLogit": -2.1562280654907227,
+      "score": 0.2011611073549496,
+      "logit": -1.3790531730607194,
+      "componentScores": {
+        "fiser": 0.39101752701951786,
+        "dear_r": 0.011304687690381322
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/0504.jpeg",
+      "local": "images/Real/Structure Images/0504.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "504",
+      "sha256": "7c6d64a5101b1eab22a28cf1d63ba4b908731aa36520d8eef56cc4d089cedc71",
+      "fiserLogit": -1.7289766073226929,
+      "dearLogit": -1.1153672933578491,
+      "score": 0.06028614067628051,
+      "logit": -2.7464731861637004,
+      "componentScores": {
+        "fiser": 0.02951865121863674,
+        "dear_r": 0.09105363013392428
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1825.jpeg",
+      "local": "images/Real/Structure Images/1825.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1825",
+      "sha256": "2676068ca41d8ad1b701a33edbca092ae620e103c54073e964c46eed90db4205",
+      "fiserLogit": -1.5214952230453491,
+      "dearLogit": -2.496832847595215,
+      "score": 0.02543381287311464,
+      "logit": -3.6459129314845096,
+      "componentScores": {
+        "fiser": 0.04527876011490804,
+        "dear_r": 0.005588865631321234
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1231.jpeg",
+      "local": "images/Real/Structure Images/1231.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1231",
+      "sha256": "a304d7b147963148f6c87b859e1f86f265158708c3e45a375e8a12d591308692",
+      "fiserLogit": 0.19713743031024933,
+      "dearLogit": -1.1791485399007797,
+      "score": 0.3666465751016116,
+      "logit": -0.5466302260673943,
+      "componentScores": {
+        "fiser": 0.6526640266752067,
+        "dear_r": 0.08062912352801645
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2977.jpeg",
+      "local": "images/Real/Structure Images/2977.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "2977",
+      "sha256": "7ae3447b1ef82c73d71f79088dba6def5eff23362196573625ab9cba3888373f",
+      "fiserLogit": -1.4319134950637817,
+      "dearLogit": -0.7220726013183594,
+      "score": 0.11982129956066637,
+      "logit": -1.994123492999566,
+      "componentScores": {
+        "fiser": 0.054330907654317556,
+        "dear_r": 0.18531169146701518
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2267.jpeg",
+      "local": "images/Real/Structure Images/2267.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "2267",
+      "sha256": "44d5eb5c41f420436edbfb3368a6a12d25da333b5ea102da93e8458a75c29964",
+      "fiserLogit": -1.1221446990966797,
+      "dearLogit": -0.8967033624649048,
+      "score": 0.11839881482136486,
+      "logit": -2.007681070302261,
+      "componentScores": {
+        "fiser": 0.10032416452047992,
+        "dear_r": 0.13647346512224978
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1850.jpeg",
+      "local": "images/Real/Structure Images/1850.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1850",
+      "sha256": "bfbbfd7ea91ee5f90dddf487b1db52adef4926df1a8c7f5d36eee41c16e7d383",
+      "fiserLogit": 0.0586162805557251,
+      "dearLogit": -0.2533467610677083,
+      "score": 0.47976201996981693,
+      "logit": -0.08099617156103318,
+      "componentScores": {
+        "fiser": 0.5827847458510449,
+        "dear_r": 0.3767392940885889
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1918.jpeg",
+      "local": "images/Real/Structure Images/1918.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1918",
+      "sha256": "c0f3b1562d3ad22bf91b6dba33a1e7b05b03ea418909586f8aead3cc880247b9",
+      "fiserLogit": -0.9058923125267029,
+      "dearLogit": 0.15867801010608673,
+      "score": 0.3692527555758645,
+      "logit": -0.5354238347696169,
+      "componentScores": {
+        "fiser": 0.15050293277417073,
+        "dear_r": 0.5880025783775583
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1260.jpeg",
+      "local": "images/Real/Structure Images/1260.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1260",
+      "sha256": "7c390609d0d276520e4b5e5f3d971f7e517b4586f58a9f2c401801aecaa39519",
+      "fiserLogit": -1.668684959411621,
+      "dearLogit": -2.082718849182129,
+      "score": 0.02330111842100758,
+      "logit": -3.735677037029633,
+      "componentScores": {
+        "fiser": 0.033449590181176055,
+        "dear_r": 0.013152646660839104
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1508.jpeg",
+      "local": "images/Real/Structure Images/1508.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1508",
+      "sha256": "6ef49d92bcb1cff3327737930239b7e8e64aa0d33a991e3485bff03bf18ef15a",
+      "fiserLogit": -1.5133572816848755,
+      "dearLogit": -1.4986578226089478,
+      "score": 0.0445715736068942,
+      "logit": -3.0650635611580324,
+      "componentScores": {
+        "fiser": 0.046037891727975525,
+        "dear_r": 0.04310525548581287
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/0592.jpeg",
+      "local": "images/Real/Structure Images/0592.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "592",
+      "sha256": "b606c7c5ef8e17e8b0f82fd37a112508d0f6724e5d60dce0eda29acb83f0bcce",
+      "fiserLogit": -1.2325857877731323,
+      "dearLogit": -1.7464145421981812,
+      "score": 0.05353885852235872,
+      "logit": -2.8723221970692205,
+      "componentScores": {
+        "fiser": 0.0809084998161476,
+        "dear_r": 0.02616921722856983
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/0212.jpeg",
+      "local": "images/Real/Structure Images/0212.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "212",
+      "sha256": "a46333d0b0605509c5201d388ade0755ecdc12198bf12ce3bf6aab16977b41e7",
+      "fiserLogit": 0.003569863736629486,
+      "dearLogit": -1.7176959216594696,
+      "score": 0.2908107758637494,
+      "logit": -0.8914495787908652,
+      "componentScores": {
+        "fiser": 0.5538821939647919,
+        "dear_r": 0.027739357762706935
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1750.jpeg",
+      "local": "images/Real/Structure Images/1750.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1750",
+      "sha256": "534d57d288f0a70516e8735c466a9b09afc31cd09c722562ab94e1a662fb5ffc",
+      "fiserLogit": -0.4164939522743225,
+      "dearLogit": -0.36238789558410645,
+      "score": 0.3303161493408414,
+      "logit": -0.7067555121841363,
+      "componentScores": {
+        "fiser": 0.33560795776135294,
+        "dear_r": 0.32502434092032995
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1172.jpeg",
+      "local": "images/Real/Structure Images/1172.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1172",
+      "sha256": "39708ec39c0ed1460d87113ad51b238e15da755fc275d02b7a8b1211dcd24be1",
+      "fiserLogit": -0.5836564898490906,
+      "dearLogit": -0.8592924773693085,
+      "score": 0.20346270066604943,
+      "logit": -1.3647912583253399,
+      "componentScores": {
+        "fiser": 0.26099561538526156,
+        "dear_r": 0.14592978594683728
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/0307.jpeg",
+      "local": "images/Real/Structure Images/0307.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "307",
+      "sha256": "8dcca702d95f9169dcf016fa72a4ea69608ccc591c53a5df6f4aa998fd117921",
+      "fiserLogit": -1.4635592699050903,
+      "dearLogit": -0.848304271697998,
+      "score": 0.09988095511529904,
+      "logit": -2.198547998677246,
+      "componentScores": {
+        "fiser": 0.05095329386539045,
+        "dear_r": 0.14880861636520762
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1684.jpeg",
+      "local": "images/Real/Structure Images/1684.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1684",
+      "sha256": "e6a1a002f84d9d99e444470233ff6fca7ea6f6dfc3843f92ab62f43313394938",
+      "fiserLogit": -0.3625742197036743,
+      "dearLogit": -1.0295371413230896,
+      "score": 0.23440224413816882,
+      "logit": -1.1836182772941701,
+      "componentScores": {
+        "fiser": 0.36181524118714936,
+        "dear_r": 0.10698924708918829
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2246.jpeg",
+      "local": "images/Real/Structure Images/2246.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "2246",
+      "sha256": "cd636e419c5c96c453d515f61c079f24661bb105594619f9df63cd0a5bc691b4",
+      "fiserLogit": -0.567415177822113,
+      "dearLogit": -0.14886105060577393,
+      "score": 0.3484261934393559,
+      "logit": -0.6259642530313935,
+      "componentScores": {
+        "fiser": 0.2677575287306564,
+        "dear_r": 0.42909485814805537
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Structure Images/1941.png",
+      "local": "images/FLUX.2/Structure Images/1941.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1941",
+      "sha256": "b59c8f0cba0213229f98f8bf8b2172f08b8d6335bc3a649409e2621bb935ed97",
+      "fiserLogit": 0.5883747935295105,
+      "dearLogit": 1.5138865411281586,
+      "score": 0.8864696526452787,
+      "logit": 2.055176713396583,
+      "componentScores": {
+        "fiser": 0.8128071098773327,
+        "dear_r": 0.9601321954132247
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Structure Images/0504.png",
+      "local": "images/FLUX.2/Structure Images/0504.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "504",
+      "sha256": "0df5570ff3c9ee3c0e50e9b6c3a8ea21f38b2e9a572bfb56f70ed891dd6afc15",
+      "fiserLogit": 0.8311160206794739,
+      "dearLogit": 1.091705858707428,
+      "score": 0.8942554137125454,
+      "logit": 2.134964808918039,
+      "componentScores": {
+        "fiser": 0.8795344740460636,
+        "dear_r": 0.908976353379027
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Structure Images/2267.png",
+      "local": "images/FLUX.2/Structure Images/2267.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "2267",
+      "sha256": "99dd87342b83c35d5b8884e46c829234d6959855967e241deb39473246ac71ff",
+      "fiserLogit": 0.8221064805984497,
+      "dearLogit": 1.6199040114879608,
+      "score": 0.9226301664272452,
+      "logit": 2.478631510276408,
+      "componentScores": {
+        "fiser": 0.8774758176781545,
+        "dear_r": 0.9677845151763359
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Structure Images/1508.png",
+      "local": "images/FLUX.2/Structure Images/1508.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1508",
+      "sha256": "2144117580ac830f71b231690dbbf0c7b75b22a96ccb5deaf0804a77761a3037",
+      "fiserLogit": 1.621748685836792,
+      "dearLogit": 1.1859983801841736,
+      "score": 0.9497008815025231,
+      "logit": 2.938159521387906,
+      "componentScores": {
+        "fiser": 0.9754134698331446,
+        "dear_r": 0.9239882931719016
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Structure Images/1172.png",
+      "local": "images/FLUX.2/Structure Images/1172.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1172",
+      "sha256": "fab5592cfb0668065e1a5a4fb8aabb22b311cb1f88278ae89c964324a5faa33e",
+      "fiserLogit": 0.9548123478889465,
+      "dearLogit": 1.1150844395160675,
+      "score": 0.908912868695239,
+      "logit": 2.3004327002783507,
+      "componentScores": {
+        "fiser": 0.9048957096609516,
+        "dear_r": 0.9129300277295266
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Structure Images/0715.png",
+      "local": "images/GPT Image 2/Structure Images/0715.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "715",
+      "sha256": "a45cbe461fad78c39096e1f1986d3b0b15ed8cb7b712f49a337e499d2cb3c0b0",
+      "fiserLogit": 0.7712898254394531,
+      "dearLogit": 0.9867740720510483,
+      "score": 0.8772360709926683,
+      "logit": 1.9665129014626268,
+      "componentScores": {
+        "fiser": 0.8652910795633089,
+        "dear_r": 0.8891810624220277
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Structure Images/1825.png",
+      "local": "images/GPT Image 2/Structure Images/1825.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1825",
+      "sha256": "d696c92e83ecce05cf09fa608008834d280180f7792d742672ca75e6cca888fa",
+      "fiserLogit": 0.7929887175559998,
+      "dearLogit": 0.871838390827179,
+      "score": 0.8669439514560264,
+      "logit": 1.8742038710838758,
+      "componentScores": {
+        "fiser": 0.8706146094274241,
+        "dear_r": 0.8632732934846287
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Structure Images/1850.png",
+      "local": "images/GPT Image 2/Structure Images/1850.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1850",
+      "sha256": "491e9d4b0d3ec91fb069a8317bf4ae71fb0abc7e31a9bef5e28c44e3dcfd0e64",
+      "fiserLogit": 1.1371365785598755,
+      "dearLogit": 1.067315861582756,
+      "score": 0.9191346573800767,
+      "logit": 2.430647303106729,
+      "componentScores": {
+        "fiser": 0.9335891619921862,
+        "dear_r": 0.9046801527679672
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Structure Images/0592.png",
+      "local": "images/GPT Image 2/Structure Images/0592.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "592",
+      "sha256": "198105f5c3711fe6ba658c4a4a5c156fe0900cf487f1dc8666cabfb395570f2f",
+      "fiserLogit": 0.5718929767608643,
+      "dearLogit": 1.0178718715906143,
+      "score": 0.8513951065109369,
+      "logit": 1.745585243443914,
+      "componentScores": {
+        "fiser": 0.8073790487472992,
+        "dear_r": 0.8954111642745745
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Structure Images/0307.png",
+      "local": "images/GPT Image 2/Structure Images/0307.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "307",
+      "sha256": "31b7070403c428383a49d388d5eaf4e52474f999b0688aa4885b2fc4793bde14",
+      "fiserLogit": -0.09770362079143524,
+      "dearLogit": -1.7780127227306366,
+      "score": 0.2622153539491986,
+      "logit": -1.034485846723345,
+      "componentScores": {
+        "fiser": 0.4998891611609682,
+        "dear_r": 0.024541546737429015
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Structure Images/0081.png",
+      "local": "images/Nano Banana 2/Structure Images/0081.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "81",
+      "sha256": "052fe5be6835d850e2de0e78764c8c0c73e7b585b4eef35e8e06e196a69328ed",
+      "fiserLogit": 0.4323500990867615,
+      "dearLogit": 2.3951444029808044,
+      "score": 0.8750345721529966,
+      "logit": 1.9462262747852763,
+      "componentScores": {
+        "fiser": 0.7566365966561057,
+        "dear_r": 0.9934325476498876
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Structure Images/1231.png",
+      "local": "images/Nano Banana 2/Structure Images/1231.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1231",
+      "sha256": "c695fffbec9143994d0472916ea51b06570a321410aa31b098a65886c08e8986",
+      "fiserLogit": -0.8617412447929382,
+      "dearLogit": -1.1712895035743713,
+      "score": 0.12242156647510966,
+      "logit": -1.9696957830304684,
+      "componentScores": {
+        "fiser": 0.16299088543688584,
+        "dear_r": 0.08185224751333349
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Structure Images/1918.png",
+      "local": "images/Nano Banana 2/Structure Images/1918.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1918",
+      "sha256": "6a65270b418a366694f3b60ee1216f483bff2458aa23d7a8164fad75eaa91dd6",
+      "fiserLogit": -0.5764212012290955,
+      "dearLogit": -0.8883214145898819,
+      "score": 0.20127027163701855,
+      "logit": -1.3783739863113793,
+      "componentScores": {
+        "fiser": 0.26399426940446147,
+        "dear_r": 0.13854627386957563
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Structure Images/0212.png",
+      "local": "images/Nano Banana 2/Structure Images/0212.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "212",
+      "sha256": "d02e26faba7e21f9dc85ca5dce86fd3c5918eb2bbaa4220294acd9b4f331ffab",
+      "fiserLogit": -0.12320764362812042,
+      "dearLogit": 1.5652621388435364,
+      "score": 0.7251395374264414,
+      "logit": 0.9701005416836362,
+      "componentScores": {
+        "fiser": 0.4862425011839738,
+        "dear_r": 0.964036573668909
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Structure Images/1684.png",
+      "local": "images/Nano Banana 2/Structure Images/1684.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1684",
+      "sha256": "517252cb11462d055a3eb8cab25cbf5717fe4052d55156c744f6932cb9c61b01",
+      "fiserLogit": -0.17819511890411377,
+      "dearLogit": 2.3013043999671936,
+      "score": 0.7244702521720565,
+      "logit": 0.9667451007531362,
+      "componentScores": {
+        "fiser": 0.4569160202046653,
+        "dear_r": 0.9920244841394477
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Structure Images/1541.png",
+      "local": "images/Qwen Image 2.1/Structure Images/1541.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1541",
+      "sha256": "45b337128c0c8c9ea2523e7d8a95b0bb5d7285061c5edeb0240e39854deba9e1",
+      "fiserLogit": 0.7266326546669006,
+      "dearLogit": 0.865412712097168,
+      "score": 0.8577185666310794,
+      "logit": 1.796469013449071,
+      "componentScores": {
+        "fiser": 0.8537529957475416,
+        "dear_r": 0.8616841375146173
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Structure Images/2977.png",
+      "local": "images/Qwen Image 2.1/Structure Images/2977.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "2977",
+      "sha256": "e209c3ce6e488b1e72c21feadd11ab6d5e7c5e6b22422a1d0d997b15bf038348",
+      "fiserLogit": 0.7743361592292786,
+      "dearLogit": 0.6723348796367645,
+      "score": 0.8362224293976351,
+      "logit": 1.6303854111352696,
+      "componentScores": {
+        "fiser": 0.8660494638441566,
+        "dear_r": 0.8063953949511137
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Structure Images/1260.png",
+      "local": "images/Qwen Image 2.1/Structure Images/1260.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1260",
+      "sha256": "2f8d36be74f946411ab99c313322eb6cf8b3d35119f244c660247f5b79151fc3",
+      "fiserLogit": 0.274552583694458,
+      "dearLogit": 1.206072747707367,
+      "score": 0.8080514007698135,
+      "logit": 1.4373980474682277,
+      "componentScores": {
+        "fiser": 0.6892263565551039,
+        "dear_r": 0.9268764449845232
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Structure Images/1750.png",
+      "local": "images/Qwen Image 2.1/Structure Images/1750.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "1750",
+      "sha256": "05dce53d8e811ca2a6efb7275fcd96928e08768e2874ef181ef073a1c65279f7",
+      "fiserLogit": 0.7738226056098938,
+      "dearLogit": 1.6534831821918488,
+      "score": 0.9179096407160452,
+      "logit": 2.414278372124801,
+      "componentScores": {
+        "fiser": 0.8659218681792686,
+        "dear_r": 0.9698974132528217
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Structure Images/2246.png",
+      "local": "images/Qwen Image 2.1/Structure Images/2246.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Structure Images",
+      "split": "calibration",
+      "sourceGroup": "2246",
+      "sha256": "050b266bcdfc6c648186912f6387502f6ad496d74d88bcaa93ed482672841262",
+      "fiserLogit": 1.0165001153945923,
+      "dearLogit": 1.0465486943721771,
+      "score": 0.9082747092076048,
+      "logit": 2.29274873552496,
+      "componentScores": {
+        "fiser": 0.915669390358542,
+        "dear_r": 0.9008800280566676
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1941.jpg",
+      "local": "images/Real/Texture Images/1941.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1941",
+      "sha256": "d2a818143fb0066f0e07e10501457019b276de32b6be20cc02b99d9686bbc4a0",
+      "fiserLogit": -0.3195016384124756,
+      "dearLogit": -1.1148314476013184,
+      "score": 0.23725651244982568,
+      "logit": -1.1677798985927779,
+      "componentScores": {
+        "fiser": 0.3833668808309866,
+        "dear_r": 0.09114614406866477
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/0715.jpg",
+      "local": "images/Real/Texture Images/0715.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "715",
+      "sha256": "df7ddabbf45e35fc515fcb4ebe6b1c38867635c14b3aa2f198d96efe0e345212",
+      "fiserLogit": -1.556942343711853,
+      "dearLogit": -1.424843668937683,
+      "score": 0.046014297336524124,
+      "logit": -3.031696524749344,
+      "componentScores": {
+        "fiser": 0.04210915473652184,
+        "dear_r": 0.049919439936526415
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/0081.jpg",
+      "local": "images/Real/Texture Images/0081.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "81",
+      "sha256": "9de7c60add74030747149f632a5cf032fc935aeeb401d0d52bc0f8b273f8015b",
+      "fiserLogit": -0.7072408199310303,
+      "dearLogit": -1.9662503004074097,
+      "score": 0.11498455971327134,
+      "logit": -2.0408072355211493,
+      "componentScores": {
+        "fiser": 0.21326147554164632,
+        "dear_r": 0.01670764388489638
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1541.jpg",
+      "local": "images/Real/Texture Images/1541.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1541",
+      "sha256": "cb7ce7ae5b8058befd31a808a8e9ce89816d54b54b86ee1fe2166baa727f6a9d",
+      "fiserLogit": -1.0223180055618286,
+      "dearLogit": -1.1028125286102295,
+      "score": 0.10728582846648158,
+      "logit": -2.118769885994444,
+      "componentScores": {
+        "fiser": 0.1213281138625186,
+        "dear_r": 0.09324354307044454
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/0504.jpg",
+      "local": "images/Real/Texture Images/0504.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "504",
+      "sha256": "c91186de140ec5b87dc250ad1a328c3c9110e65199b50e3b87872052a3358ab6",
+      "fiserLogit": -1.2921220064163208,
+      "dearLogit": -0.8397473096847534,
+      "score": 0.11150267298718097,
+      "logit": -2.0754830755713876,
+      "componentScores": {
+        "fiser": 0.07192254040538379,
+        "dear_r": 0.15108280556897816
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1825.jpg",
+      "local": "images/Real/Texture Images/1825.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1825",
+      "sha256": "7f043af9755b3dddc8f9cc04b516397df3d3a47abfcd88759ad5438434ffbb48",
+      "fiserLogit": -1.186452031135559,
+      "dearLogit": -1.781032681465149,
+      "score": 0.05647742486886376,
+      "logit": -2.81577929306542,
+      "componentScores": {
+        "fiser": 0.08856359828629701,
+        "dear_r": 0.024391251451430514
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1231.jpg",
+      "local": "images/Real/Texture Images/1231.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1231",
+      "sha256": "9fde8ca1b0751c2011977d631da69a461b537c9cc4400f66b4f1f5891058593c",
+      "fiserLogit": -1.5322579145431519,
+      "dearLogit": -1.9609166383743286,
+      "score": 0.030592210105677885,
+      "logit": -3.455939954328885,
+      "componentScores": {
+        "fiser": 0.04429308322915744,
+        "dear_r": 0.01689133698219833
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2977.jpg",
+      "local": "images/Real/Texture Images/2977.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "2977",
+      "sha256": "98c1982a9f5223e0ac7f8a07be27bce68918aa738f75e36accdf2f91855723c7",
+      "fiserLogit": -1.101298451423645,
+      "dearLogit": -0.6601729393005371,
+      "score": 0.15500889709772514,
+      "logit": -1.6958435822896303,
+      "componentScores": {
+        "fiser": 0.10442479640803731,
+        "dear_r": 0.20559299778741294
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2267.jpg",
+      "local": "images/Real/Texture Images/2267.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "2267",
+      "sha256": "01cef013cbb9407c1dcebb173c6e5b1f53ba0f0d6ecb852f91721e3a0a46a6b7",
+      "fiserLogit": -0.14907535910606384,
+      "dearLogit": -1.921631932258606,
+      "score": 0.24536453972711125,
+      "logit": -1.1234897766253,
+      "componentScores": {
+        "fiser": 0.4724222568478956,
+        "dear_r": 0.018306822606326892
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1850.jpg",
+      "local": "images/Real/Texture Images/1850.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1850",
+      "sha256": "c70ed4f22ece2c25a8e1adad5b152591dd525538eda91ab5e43e89041ae494c7",
+      "fiserLogit": -1.681768774986267,
+      "dearLogit": -1.350528597831726,
+      "score": 0.045179202870015735,
+      "logit": -3.050886808430259,
+      "componentScores": {
+        "fiser": 0.032555726810050305,
+        "dear_r": 0.057802678929981165
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1918.jpg",
+      "local": "images/Real/Texture Images/1918.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1918",
+      "sha256": "8d127d66175b0d78cd93bd9d601a733653e681313125322d06e09c5a88528ac6",
+      "fiserLogit": -0.9874873161315918,
+      "dearLogit": -0.943448543548584,
+      "score": 0.1274465133324244,
+      "logit": -1.9237271816612416,
+      "componentScores": {
+        "fiser": 0.1295046793762266,
+        "dear_r": 0.12538834728862225
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1260.jpg",
+      "local": "images/Real/Texture Images/1260.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1260",
+      "sha256": "2bbee2a90f8a1d91a40438ecdfb270232af6d937edbda450b8e1d17f8b657415",
+      "fiserLogit": -0.9921665787696838,
+      "dearLogit": -2.5411458015441895,
+      "score": 0.06673883056851009,
+      "logit": -2.6378981350679167,
+      "componentScores": {
+        "fiser": 0.12837954341150168,
+        "dear_r": 0.0050981177255184995
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1508.jpg",
+      "local": "images/Real/Texture Images/1508.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1508",
+      "sha256": "16d7b10f4796869609a35a177364dc07ed2375637ee422bf362283c2fb6456a5",
+      "fiserLogit": -1.366475224494934,
+      "dearLogit": -0.7001791000366211,
+      "score": 0.12714882795665045,
+      "logit": -1.9264067885223783,
+      "componentScores": {
+        "fiser": 0.06199478202846955,
+        "dear_r": 0.19230287388483133
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/0592.jpg",
+      "local": "images/Real/Texture Images/0592.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "592",
+      "sha256": "5705012949b23e3ba15cf5fe1b6bc97af81a3716d0975d42d8f6a87d161d1194",
+      "fiserLogit": -0.975559651851654,
+      "dearLogit": -1.72789466381073,
+      "score": 0.07979112824335355,
+      "logit": -2.4451883554126863,
+      "componentScores": {
+        "fiser": 0.1324107087594755,
+        "dear_r": 0.027171547727231588
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/0212.jpg",
+      "local": "images/Real/Texture Images/0212.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "212",
+      "sha256": "3ea2525290ce05c6a93f9fc9fe75c1f88dcff97f3820159d597aeef6c8a1a5d4",
+      "fiserLogit": -0.5542052984237671,
+      "dearLogit": -2.6606099605560303,
+      "score": 0.13865852789649868,
+      "logit": -1.8264767484097606,
+      "componentScores": {
+        "fiser": 0.2733385842971049,
+        "dear_r": 0.003978471495892486
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1750.jpg",
+      "local": "images/Real/Texture Images/1750.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1750",
+      "sha256": "154a79e239df6d6d68d6b0cb22ddefbef604ddf89b93d58a71b7b8cdc0358623",
+      "fiserLogit": -1.1557399034500122,
+      "dearLogit": -2.151088237762451,
+      "score": 0.05272081184279323,
+      "logit": -2.8885835737789765,
+      "componentScores": {
+        "fiser": 0.09401652132601183,
+        "dear_r": 0.01142510235957462
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1172.jpg",
+      "local": "images/Real/Texture Images/1172.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1172",
+      "sha256": "719cafaafd95425c6b208798172ced1a2bb41904544f024a76df5c59db30a53b",
+      "fiserLogit": -1.4885014295578003,
+      "dearLogit": -1.2110646963119507,
+      "score": 0.06213190041545709,
+      "logit": -2.714349769004209,
+      "componentScores": {
+        "fiser": 0.048432190232675455,
+        "dear_r": 0.07583161059823872
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/0307.jpg",
+      "local": "images/Real/Texture Images/0307.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "307",
+      "sha256": "08d580a9002d67d7bdd58f1cdfe97f8929a508ca6232cb46c6ca11c079376605",
+      "fiserLogit": -1.1583765745162964,
+      "dearLogit": -1.281607985496521,
+      "score": 0.07984093336067227,
+      "logit": -2.4445102312948097,
+      "componentScores": {
+        "fiser": 0.09353681733187515,
+        "dear_r": 0.0661450493894694
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1684.jpg",
+      "local": "images/Real/Texture Images/1684.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1684",
+      "sha256": "236c79079ec24b8375a759fc7fac5eae33a54ac4f5613a3e32f152347de8766c",
+      "fiserLogit": -1.2765227556228638,
+      "dearLogit": -1.325595498085022,
+      "score": 0.06744192008270306,
+      "logit": -2.6266646494064934,
+      "componentScores": {
+        "fiser": 0.07418381713429702,
+        "dear_r": 0.06070002303110911
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2246.jpg",
+      "local": "images/Real/Texture Images/2246.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "2246",
+      "sha256": "aaf016c02311b1619422f2a23340b7f0c749a365e1bfce8b73074d54755f1fb4",
+      "fiserLogit": -0.23632507026195526,
+      "dearLogit": -0.19652363657951355,
+      "score": 0.4155889961022423,
+      "logit": -0.3409077273546495,
+      "componentScores": {
+        "fiser": 0.4262390703969311,
+        "dear_r": 0.40493892180755353
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Texture Images/1941.png",
+      "local": "images/FLUX.2/Texture Images/1941.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1941",
+      "sha256": "1295596b336f2c7c6ecc0069114dcd4d3eb4e7e659799fc76c78fbf7b3dc51f1",
+      "fiserLogit": 2.8735384941101074,
+      "dearLogit": 2.085725873708725,
+      "score": 0.9929144842362406,
+      "logit": 4.942591874671136,
+      "componentScores": {
+        "fiser": 0.9982745991869915,
+        "dear_r": 0.9875543692854898
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Texture Images/0504.png",
+      "local": "images/FLUX.2/Texture Images/0504.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "504",
+      "sha256": "7ea493d66e914d9b7f8b6d2b2b8daf28e9144b7213b69013cfdc1d70435414e0",
+      "fiserLogit": 2.209646463394165,
+      "dearLogit": 0.8184148818254471,
+      "score": 0.921238185410727,
+      "logit": 2.4592903259177303,
+      "componentScores": {
+        "fiser": 0.9928910708918987,
+        "dear_r": 0.8495852999295552
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Texture Images/2267.png",
+      "local": "images/FLUX.2/Texture Images/2267.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "2267",
+      "sha256": "8bb345a77a4bb7cf1f38bc7b597f160292811fde83c6c8f575601713a5cb52cd",
+      "fiserLogit": 2.5753962993621826,
+      "dearLogit": 0.003124203532934189,
+      "score": 0.7522894253727157,
+      "logit": 1.1108600972177438,
+      "componentScores": {
+        "fiser": 0.9967384583136519,
+        "dear_r": 0.5078403924317796
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Texture Images/1508.png",
+      "local": "images/FLUX.2/Texture Images/1508.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1508",
+      "sha256": "70d31830cc9093862089cc2d077a4d64142ed38981bbbe44a68be02d536e7c0a",
+      "fiserLogit": 2.053178071975708,
+      "dearLogit": -0.040988560765981674,
+      "score": 0.737470425011215,
+      "logit": 1.0328622434209584,
+      "componentScores": {
+        "fiser": 0.9900904020821185,
+        "dear_r": 0.4848504479403114
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Texture Images/1172.png",
+      "local": "images/FLUX.2/Texture Images/1172.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1172",
+      "sha256": "9ca22dee7427cd5110cc00a07b20dbf9e1fba815c3dd156551eb91935d4ab6e0",
+      "fiserLogit": 1.9289997816085815,
+      "dearLogit": -0.04164065793156624,
+      "score": 0.7358111485530773,
+      "logit": 1.0243093003658685,
+      "componentScores": {
+        "fiser": 0.9871114570952251,
+        "dear_r": 0.4845108400109295
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Texture Images/0715.png",
+      "local": "images/GPT Image 2/Texture Images/0715.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "715",
+      "sha256": "c852c2dd70cdade58f44f79ede4b9f212946a8c5f1d72e4a2e361ba2f75976c3",
+      "fiserLogit": 0.00010102987289428711,
+      "dearLogit": 1.2128217667341232,
+      "score": 0.739935490902907,
+      "logit": 1.045633295790017,
+      "componentScores": {
+        "fiser": 0.5520464568947021,
+        "dear_r": 0.9278245249111119
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Texture Images/1825.png",
+      "local": "images/GPT Image 2/Texture Images/1825.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1825",
+      "sha256": "11751e22505515b442ae4f8f319d10cd3b0cf625e9944b6f1c87821ed0f2a710",
+      "fiserLogit": 1.014138102531433,
+      "dearLogit": 1.0011411309242249,
+      "score": 0.9036884230471445,
+      "logit": 2.238896107053262,
+      "componentScores": {
+        "fiser": 0.9152780926696291,
+        "dear_r": 0.8920987534246599
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Texture Images/1850.png",
+      "local": "images/GPT Image 2/Texture Images/1850.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1850",
+      "sha256": "798a0b676762d32976db205e0ec9683449266311a75a0b8d963542bdac9b2a69",
+      "fiserLogit": 1.4168020486831665,
+      "dearLogit": 1.206497609615326,
+      "score": 0.9446587243015603,
+      "logit": 2.837304697855559,
+      "componentScores": {
+        "fiser": 0.9623809836036736,
+        "dear_r": 0.926936464999447
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Texture Images/0592.png",
+      "local": "images/GPT Image 2/Texture Images/0592.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "592",
+      "sha256": "3b13b609e781f00ed53df569010dc426d3ddcd8704d704c595f89eab793fe2cb",
+      "fiserLogit": 1.4686939716339111,
+      "dearLogit": 1.7734676897525787,
+      "score": 0.9713029501485848,
+      "logit": 3.5218440928748977,
+      "componentScores": {
+        "fiser": 0.9662027431898423,
+        "dear_r": 0.9764031571073272
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Texture Images/0307.png",
+      "local": "images/GPT Image 2/Texture Images/0307.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "307",
+      "sha256": "a81c906d265f86217f3288287984bee8045df7ad6e0dd4373aca44c3682fb91c",
+      "fiserLogit": 1.54555082321167,
+      "dearLogit": 1.5137663185596466,
+      "score": 0.965652580474486,
+      "logit": 3.336277229118985,
+      "componentScores": {
+        "fiser": 0.971182562256221,
+        "dear_r": 0.9601225986927511
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Texture Images/0081.png",
+      "local": "images/Nano Banana 2/Texture Images/0081.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "81",
+      "sha256": "d50bd5c899ef8db542499f19862fae2cb78a98eb3176b6a57715c33fafa8aa61",
+      "fiserLogit": 0.5687046051025391,
+      "dearLogit": 4.508346080780029,
+      "score": 0.90311731459528,
+      "logit": 2.2323516437370836,
+      "componentScores": {
+        "fiser": 0.8063152766174281,
+        "dear_r": 0.999919352573132
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Texture Images/1231.png",
+      "local": "images/Nano Banana 2/Texture Images/1231.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1231",
+      "sha256": "b76b3da633b24e87221e9957bb47b138823bc162a4ff25d3d204ae4437ed7fdd",
+      "fiserLogit": 0.09664992988109589,
+      "dearLogit": 2.0738563537597656,
+      "score": 0.7948430137841678,
+      "logit": 1.3543691557247257,
+      "componentScores": {
+        "fiser": 0.6024395474614489,
+        "dear_r": 0.9872464801068868
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Texture Images/1918.png",
+      "local": "images/Nano Banana 2/Texture Images/1918.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1918",
+      "sha256": "4ff0aa50b2c0eb68b3b63436c38376c05ec5810962ac4df2277d68103accdcf0",
+      "fiserLogit": 0.6073301434516907,
+      "dearLogit": 4.379371762275696,
+      "score": 0.909398894267684,
+      "logit": 2.306317407972619,
+      "componentScores": {
+        "fiser": 0.8189033180206379,
+        "dear_r": 0.9998944705147302
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Texture Images/0212.png",
+      "local": "images/Nano Banana 2/Texture Images/0212.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "212",
+      "sha256": "3b0206a2e5709ec136f1b235eda995772e24fee074bc1457135630ad8c388cfc",
+      "fiserLogit": -0.38836514949798584,
+      "dearLogit": 1.9950383603572845,
+      "score": 0.6670840969380597,
+      "logit": 0.6950262056053533,
+      "componentScores": {
+        "fiser": 0.34916560653424433,
+        "dear_r": 0.9850025873418751
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Texture Images/1684.png",
+      "local": "images/Nano Banana 2/Texture Images/1684.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1684",
+      "sha256": "f85773a7ae7830e0205da5e54e6064818eeab377f4bca5eb4532728df1b4e7ed",
+      "fiserLogit": 0.10588477551937103,
+      "dearLogit": 1.6309190094470978,
+      "score": 0.787828966669723,
+      "logit": 1.3118883085190807,
+      "componentScores": {
+        "fiser": 0.6071649813493016,
+        "dear_r": 0.9684929519901444
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Texture Images/1541.png",
+      "local": "images/Qwen Image 2.1/Texture Images/1541.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1541",
+      "sha256": "f91b5213ba028b7e7ce36487220f67c6bea5611dc94c9d90cbb1434fd3d92a4d",
+      "fiserLogit": 2.3790524005889893,
+      "dearLogit": -0.0959775373339653,
+      "score": 0.7256678177384515,
+      "logit": 0.9727526426790729,
+      "componentScores": {
+        "fiser": 0.9950427950484981,
+        "dear_r": 0.45629284042840484
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Texture Images/2977.png",
+      "local": "images/Qwen Image 2.1/Texture Images/2977.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "2977",
+      "sha256": "85830ab677ce5c7352980b16a074bd9b018a0e51df100bfa3b4910d49782eb9e",
+      "fiserLogit": 2.1711559295654297,
+      "dearLogit": 1.5789083242416382,
+      "score": 0.9786476655979696,
+      "logit": 3.8250106122458436,
+      "componentScores": {
+        "fiser": 0.9922851732933693,
+        "dear_r": 0.9650101579025698
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Texture Images/1260.png",
+      "local": "images/Qwen Image 2.1/Texture Images/1260.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1260",
+      "sha256": "b1df13090b54998d689c5c64a22c1028d9d96731bdcb172d0b19f50d618e33de",
+      "fiserLogit": 2.503366231918335,
+      "dearLogit": 0.9805186241865158,
+      "score": 0.9420429865549023,
+      "logit": 2.7883493185581374,
+      "componentScores": {
+        "fiser": 0.9961967247448529,
+        "dear_r": 0.8878892483649516
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Texture Images/1750.png",
+      "local": "images/Qwen Image 2.1/Texture Images/1750.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "1750",
+      "sha256": "82c8530702868d8fa0d3b651a7f8555e8e7f9377b06131b23339cac5258cf1c7",
+      "fiserLogit": 1.4945868253707886,
+      "dearLogit": 1.104484647512436,
+      "score": 0.9395619629078589,
+      "logit": 2.7437951098366242,
+      "componentScores": {
+        "fiser": 0.9679668649044391,
+        "dear_r": 0.9111570609112786
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Texture Images/2246.png",
+      "local": "images/Qwen Image 2.1/Texture Images/2246.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Texture Images",
+      "split": "calibration",
+      "sourceGroup": "2246",
+      "sha256": "c02112f13f9fe63f74bdf096c672a6361eeae5fc0eab99149261b05c611ed005",
+      "fiserLogit": 2.1808135509490967,
+      "dearLogit": 0.9643438756465912,
+      "score": 0.9384648632167369,
+      "logit": 2.724637074550579,
+      "componentScores": {
+        "fiser": 0.9924418511788463,
+        "dear_r": 0.8844878752546277
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2294.jpg",
+      "local": "images/Real/Hybrid Images/2294.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2294",
+      "sha256": "be5d2423e92ef8c1a61117358baf88b5b66db65efb069a246eb4c11c1e60a9ff",
+      "fiserLogit": -0.9237123131752014,
+      "dearLogit": -0.8742530345916748,
+      "score": 0.14388738073728014,
+      "logit": -1.7833710166671797,
+      "componentScores": {
+        "fiser": 0.14569012578603038,
+        "dear_r": 0.14208463568852986
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1720.jpg",
+      "local": "images/Real/Hybrid Images/1720.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "1720",
+      "sha256": "83971316d6be2d4998c84e893e1dcbfe445f968cde7aaa0cca7ff462da434bc5",
+      "fiserLogit": -0.7409244179725647,
+      "dearLogit": -1.047033667564392,
+      "score": 0.15248293418947595,
+      "logit": -1.7152582928702917,
+      "componentScores": {
+        "fiser": 0.20141261096740085,
+        "dear_r": 0.10355325741155107
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/0252.png",
+      "local": "images/Real/Hybrid Images/0252.png",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "252",
+      "sha256": "1db6ce8ccb596af6f52a812ce00c0d1d3dff032a7e9604884417e9b78f4b2244",
+      "fiserLogit": 0.5307994484901428,
+      "dearLogit": -1.580972969532013,
+      "score": 0.4149408544577999,
+      "logit": -0.3435769549171322,
+      "componentScores": {
+        "fiser": 0.7933263190808783,
+        "dear_r": 0.03655538983472155
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2638.jpg",
+      "local": "images/Real/Hybrid Images/2638.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2638",
+      "sha256": "7d772f05150c481faa2829c49e5a1d72f2be8a5de88f4c63e79c73a6f9e0f9dc",
+      "fiserLogit": 0.2028048187494278,
+      "dearLogit": -0.6980480750401815,
+      "score": 0.4242016945974436,
+      "logit": -0.30554839821206453,
+      "componentScores": {
+        "fiser": 0.6554094012520945,
+        "dear_r": 0.19299398794279277
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2075.jpg",
+      "local": "images/Real/Hybrid Images/2075.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2075",
+      "sha256": "002e40a2e346c326f891576b41f46adfb23fbedf8b4278663dca6b4c821f71c9",
+      "fiserLogit": 0.3861464262008667,
+      "dearLogit": -0.7270442247390747,
+      "score": 0.46085773555325515,
+      "logit": -0.1568900818398028,
+      "componentScores": {
+        "fiser": 0.7379637185542774,
+        "dear_r": 0.18375175255223286
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2881.jpg",
+      "local": "images/Real/Hybrid Images/2881.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2881",
+      "sha256": "b05e5b0f3f5a4cf67a5eeec3a05b00bcf354f765d1d747d00e4fdbfedc567604",
+      "fiserLogit": -1.5190473794937134,
+      "dearLogit": -1.1413733959197998,
+      "score": 0.0660849872393022,
+      "logit": -2.648443842212656,
+      "componentScores": {
+        "fiser": 0.045505839710084935,
+        "dear_r": 0.08666413476851947
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2521.png",
+      "local": "images/Real/Hybrid Images/2521.png",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2521",
+      "sha256": "bad429986e21ee8750bce28e308256aeaa5f5e5e5c2940e6abdc81278217c55e",
+      "fiserLogit": 1.070705771446228,
+      "dearLogit": -0.9578556418418884,
+      "score": 0.5231698498167292,
+      "logit": 0.09274582378873517,
+      "componentScores": {
+        "fiser": 0.9242088940017958,
+        "dear_r": 0.12213080563166263
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/0404.jpeg",
+      "local": "images/Real/Hybrid Images/0404.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "404",
+      "sha256": "5772a291f74e7ce8262a23a243f1b8d93cc98099d29dde10479a65622f7b01a5",
+      "fiserLogit": -1.4704653024673462,
+      "dearLogit": -0.925117015838623,
+      "score": 0.08994181271829021,
+      "logit": -2.3143456036442083,
+      "componentScores": {
+        "fiser": 0.05024307039310553,
+        "dear_r": 0.1296405550434749
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/0836.jpg",
+      "local": "images/Real/Hybrid Images/0836.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "836",
+      "sha256": "d4b2d53776cc46a0d8ff1118bacd417653ac2000c95329b712019b7125433b00",
+      "fiserLogit": -1.2375634908676147,
+      "dearLogit": -2.4069437980651855,
+      "score": 0.04342640820483352,
+      "logit": -3.09228998450867,
+      "componentScores": {
+        "fiser": 0.08011958389724841,
+        "dear_r": 0.006733232512418623
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1599.jpg",
+      "local": "images/Real/Hybrid Images/1599.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "1599",
+      "sha256": "c23a1016011b5f31c729843876cbfcb889850e80426795371500ca926989f11d",
+      "fiserLogit": -1.619167685508728,
+      "dearLogit": -0.9362770318984985,
+      "score": 0.08204459536070524,
+      "logit": -2.4148858653202567,
+      "componentScores": {
+        "fiser": 0.0370517393760898,
+        "dear_r": 0.12703745134532068
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1974.jpg",
+      "local": "images/Real/Hybrid Images/1974.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "1974",
+      "sha256": "35b2c6cc36af4b04d23a2e822e047144b114b9f799892ec7b663849a9e689e23",
+      "fiserLogit": -1.1587163209915161,
+      "dearLogit": -1.0093421936035156,
+      "score": 0.10227735599989625,
+      "logit": -2.1721728614254827,
+      "componentScores": {
+        "fiser": 0.09347516528217686,
+        "dear_r": 0.11107954671761563
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2067.jpg",
+      "local": "images/Real/Hybrid Images/2067.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2067",
+      "sha256": "930bcd6fd94bef6db2461c0cbe2560665be6293bbb4d8a51b720962bab709e41",
+      "fiserLogit": -1.1520546674728394,
+      "dearLogit": -0.4406045973300934,
+      "score": 0.19250140580497044,
+      "logit": -1.4338378575762118,
+      "componentScores": {
+        "fiser": 0.09469069065323703,
+        "dear_r": 0.29031212095670383
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2506.png",
+      "local": "images/Real/Hybrid Images/2506.png",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2506",
+      "sha256": "2d308aff8a92b5e99cdec6af110805f1540b34fa6146c2bf474a99e3c47016c8",
+      "fiserLogit": 0.6878926753997803,
+      "dearLogit": -2.153578519821167,
+      "score": 0.4272287472238849,
+      "logit": -0.29316684962177103,
+      "componentScores": {
+        "fiser": 0.8430908913314198,
+        "dear_r": 0.011366603116349943
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2380.jpg",
+      "local": "images/Real/Hybrid Images/2380.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2380",
+      "sha256": "b923b9f922d6883edf6eebe942256e3dafa1235bbf211728bb37d6cfa5657ae4",
+      "fiserLogit": -1.7085317373275757,
+      "dearLogit": -1.549863338470459,
+      "score": 0.03485430760187122,
+      "logit": -3.3211023328824516,
+      "componentScores": {
+        "fiser": 0.030798687171688995,
+        "dear_r": 0.03890992803205344
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1826.jpg",
+      "local": "images/Real/Hybrid Images/1826.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "1826",
+      "sha256": "267e197735009d36feba5ac51f09d7c1c6f5b3ff13ed5af278dddae4993f2b62",
+      "fiserLogit": -1.4092295169830322,
+      "dearLogit": -1.6696829795837402,
+      "score": 0.04372581825608686,
+      "logit": -3.085105938499842,
+      "componentScores": {
+        "fiser": 0.056880724824289124,
+        "dear_r": 0.030570911687884592
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/1122.jpg",
+      "local": "images/Real/Hybrid Images/1122.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "1122",
+      "sha256": "8e250a9d2949de95827d90aac0c578c1b2a2d951b0178c77999acf573456bc7a",
+      "fiserLogit": -1.4471462965011597,
+      "dearLogit": -1.3349615335464478,
+      "score": 0.05613778359147045,
+      "logit": -2.8221711081676615,
+      "componentScores": {
+        "fiser": 0.052679517620721664,
+        "dear_r": 0.05959604956221924
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2470.jpg",
+      "local": "images/Real/Hybrid Images/2470.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2470",
+      "sha256": "475d3c0e1814045e62cffe8cbe53f5b37217fba4898dbd6800edfe6f7c75c1aa",
+      "fiserLogit": -1.7277119159698486,
+      "dearLogit": -1.0624521970748901,
+      "score": 0.06510146468100117,
+      "logit": -2.664490957123203,
+      "componentScores": {
+        "fiser": 0.02959631343109055,
+        "dear_r": 0.10060661593091179
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/0293.jpg",
+      "local": "images/Real/Hybrid Images/0293.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "293",
+      "sha256": "b61afe448fb94013434aa7017fa9dfe4dd7acba360788cdff32e16fd6dbba738",
+      "fiserLogit": -1.596643090248108,
+      "dearLogit": -1.331615924835205,
+      "score": 0.04939970258340493,
+      "logit": -2.957149273455451,
+      "componentScores": {
+        "fiser": 0.03881118501918482,
+        "dear_r": 0.059988220147625046
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/2252.jpg",
+      "local": "images/Real/Hybrid Images/2252.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2252",
+      "sha256": "6c2f788a93f8d9843f79aabf9929b3b4ca2f27886965ad898f49379c14ba61f1",
+      "fiserLogit": -1.4031481742858887,
+      "dearLogit": -1.4204885363578796,
+      "score": 0.05396754327117334,
+      "logit": -2.863894062574665,
+      "componentScores": {
+        "fiser": 0.05758319193058279,
+        "dear_r": 0.0503518946117639
+      }
+    },
+    {
+      "remote": "images/Real/Hybrid Images/0251.jpg",
+      "local": "images/Real/Hybrid Images/0251.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "251",
+      "sha256": "c29fb070efcc1efd97b7478e7c7d6e71202042f1ea7da2d6559cc9fd391f8be0",
+      "fiserLogit": -0.40710747241973877,
+      "dearLogit": -1.4771629571914673,
+      "score": 0.19254781995566092,
+      "logit": -1.4335392953519834,
+      "componentScores": {
+        "fiser": 0.34010337511438576,
+        "dear_r": 0.04499226479693606
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Hybrid Images/2294.png",
+      "local": "images/FLUX.2/Hybrid Images/2294.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2294",
+      "sha256": "9c5637b030d76acc6482c1a550a41508023af27fab392df0b78af0ed26f3341e",
+      "fiserLogit": 1.7726010084152222,
+      "dearLogit": 2.2837597131729126,
+      "score": 0.9869036623879823,
+      "logit": 4.32223980865521,
+      "componentScores": {
+        "fiser": 0.9820775536120039,
+        "dear_r": 0.9917297711639607
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Hybrid Images/2075.png",
+      "local": "images/FLUX.2/Hybrid Images/2075.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2075",
+      "sha256": "e41473c17ee94a25c05d557e31bfea31bce6e60592651d1bce8952db1a99be2e",
+      "fiserLogit": 1.3404974937438965,
+      "dearLogit": 2.0985526740550995,
+      "score": 0.9719388971672418,
+      "logit": 3.5449085629216013,
+      "componentScores": {
+        "fiser": 0.9559989528121251,
+        "dear_r": 0.9878788415223585
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Hybrid Images/0836.png",
+      "local": "images/FLUX.2/Hybrid Images/0836.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "836",
+      "sha256": "8957456b007b2f6e635fd61b2d0e31ddbed697b3abbf772c499ce64da62c47d6",
+      "fiserLogit": 1.2179858684539795,
+      "dearLogit": 1.94762322306633,
+      "score": 0.9635090928263674,
+      "logit": 3.2735188140745906,
+      "componentScores": {
+        "fiser": 0.943548355292394,
+        "dear_r": 0.983469830360341
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Hybrid Images/2506.png",
+      "local": "images/FLUX.2/Hybrid Images/2506.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2506",
+      "sha256": "e4ae3ee53a1ed1cb517dff19c549533f958bac154b686e1b5f939488fcd7556f",
+      "fiserLogit": 2.4563302993774414,
+      "dearLogit": 1.918267697095871,
+      "score": 0.9891201093798079,
+      "logit": 4.509899581440599,
+      "componentScores": {
+        "fiser": 0.9957954928110825,
+        "dear_r": 0.9824447259485333
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Hybrid Images/2470.png",
+      "local": "images/FLUX.2/Hybrid Images/2470.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2470",
+      "sha256": "1c9a4b46a7c2bb91dcb907da587f5d495d859c576b5b624692619d5711f0e83d",
+      "fiserLogit": 1.5159128904342651,
+      "dearLogit": 1.425156146287918,
+      "score": 0.9608839302336327,
+      "logit": 3.2013202474571925,
+      "componentScores": {
+        "fiser": 0.9693526752731417,
+        "dear_r": 0.9524151851941237
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Hybrid Images/1720.png",
+      "local": "images/GPT Image 2/Hybrid Images/1720.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "1720",
+      "sha256": "394566784056c732abf10355a8588bc69d1969946b0bdf911b1abd9ec1ce4dec",
+      "fiserLogit": 1.6549930572509766,
+      "dearLogit": 1.6150807738304138,
+      "score": 0.9722666256907849,
+      "logit": 3.5569935364578957,
+      "componentScores": {
+        "fiser": 0.9770637718531927,
+        "dear_r": 0.9674694795283771
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Hybrid Images/2881.png",
+      "local": "images/GPT Image 2/Hybrid Images/2881.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2881",
+      "sha256": "9cbc3dccd32fe4875210281906e0f56c7f11cdb814594ced5fd7d16e0abdf9f4",
+      "fiserLogit": 0.9398249983787537,
+      "dearLogit": 0.10432850817839305,
+      "score": 0.7312002339610839,
+      "logit": 1.0007206018508703,
+      "componentScores": {
+        "fiser": 0.9020983198362142,
+        "dear_r": 0.5603021480859537
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Hybrid Images/1599.png",
+      "local": "images/GPT Image 2/Hybrid Images/1599.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "1599",
+      "sha256": "280c26e4db764edc236ea1fb3ccd95aed35b8e520b0ff7fa267ae92009a7d473",
+      "fiserLogit": 0.47380149364471436,
+      "dearLogit": 1.1626823544502258,
+      "score": 0.8465528663709784,
+      "logit": 1.7078165511324288,
+      "componentScores": {
+        "fiser": 0.7726031653710356,
+        "dear_r": 0.9205025673709212
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Hybrid Images/2380.png",
+      "local": "images/GPT Image 2/Hybrid Images/2380.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2380",
+      "sha256": "ca1a425731733b7262e4981848540216f78e4709cf240cb728b99adf75143694",
+      "fiserLogit": 0.7847384810447693,
+      "dearLogit": 1.0695356726646423,
+      "score": 0.8868452500802577,
+      "logit": 2.0589141525301926,
+      "componentScores": {
+        "fiser": 0.8686119519887971,
+        "dear_r": 0.9050785481717184
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Hybrid Images/0293.png",
+      "local": "images/GPT Image 2/Hybrid Images/0293.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "293",
+      "sha256": "5c0c3c534254a537c5c791040eb3747f8bf532e95cea3ed5e7fa9fbfca8c2bc2",
+      "fiserLogit": 0.7594911456108093,
+      "dearLogit": 0.352167380352815,
+      "score": 0.7717459721883198,
+      "logit": 1.2181962784950353,
+      "componentScores": {
+        "fiser": 0.8623195317052078,
+        "dear_r": 0.6811724126714316
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Hybrid Images/0252.png",
+      "local": "images/Nano Banana 2/Hybrid Images/0252.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "252",
+      "sha256": "f01eef8a8d4fa0bc61314959ec08581b613c2cf7f0fd73b386d1f5d1adbb6bde",
+      "fiserLogit": 0.49604636430740356,
+      "dearLogit": 0.9642894119024277,
+      "score": 0.8326687306862713,
+      "logit": 1.6046603846518803,
+      "componentScores": {
+        "fiser": 0.780861189358785,
+        "dear_r": 0.8844762720137577
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Hybrid Images/2521.png",
+      "local": "images/Nano Banana 2/Hybrid Images/2521.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2521",
+      "sha256": "90ba4b56d2136903a4409469e5809ecc5beafda1080f5a96cd9eac042d60b11c",
+      "fiserLogit": 0.49120718240737915,
+      "dearLogit": 1.8042775690555573,
+      "score": 0.8784610667479769,
+      "logit": 1.977936939031935,
+      "componentScores": {
+        "fiser": 0.7790832583420843,
+        "dear_r": 0.9778388751538694
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Hybrid Images/1974.jpeg",
+      "local": "images/Nano Banana 2/Hybrid Images/1974.jpeg",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "1974",
+      "sha256": "f4ac127abd4f805d0e6ced0c636fc89cc6f976331570b72d99e24dc08883d596",
+      "fiserLogit": 0.21165646612644196,
+      "dearLogit": -0.36782632395625114,
+      "score": 0.4911090378746725,
+      "logit": -0.03556759760466192,
+      "componentScores": {
+        "fiser": 0.6596765551392474,
+        "dear_r": 0.32254152061009767
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Hybrid Images/1826.png",
+      "local": "images/Nano Banana 2/Hybrid Images/1826.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "1826",
+      "sha256": "639e55291e2a4693b78283d7e8bf3952c33219e293d196011a6733def9f41bdb",
+      "fiserLogit": -0.7970197796821594,
+      "dearLogit": 0.4621294178068638,
+      "score": 0.45578413992053657,
+      "logit": -0.17732664969895715,
+      "componentScores": {
+        "fiser": 0.18278657059435313,
+        "dear_r": 0.72878170924672
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Hybrid Images/2252.png",
+      "local": "images/Nano Banana 2/Hybrid Images/2252.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2252",
+      "sha256": "f8d2bd28a47dc6c84727fd1f6e80cc9909f36e796d8a088061e41421d827c662",
+      "fiserLogit": 0.16518937051296234,
+      "dearLogit": 5.780781984329224,
+      "score": 0.8184979486388403,
+      "logit": 1.5062039346571263,
+      "componentScores": {
+        "fiser": 0.6370015773616711,
+        "dear_r": 0.9999943199160095
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Hybrid Images/2638.png",
+      "local": "images/Qwen Image 2.1/Hybrid Images/2638.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2638",
+      "sha256": "c3f16c5802f5aeb39e9b8fe9f306ffde543ca7682f11b9f00975b1dd4ff3b478",
+      "fiserLogit": 0.8868905901908875,
+      "dearLogit": 1.9250443130731583,
+      "score": 0.9371552335864151,
+      "logit": 2.702181278862135,
+      "componentScores": {
+        "fiser": 0.891623691669357,
+        "dear_r": 0.9826867755034733
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Hybrid Images/0404.png",
+      "local": "images/Qwen Image 2.1/Hybrid Images/0404.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "404",
+      "sha256": "88ee7014c3612e71f72564764f88ce3a7742ba70c87175b478bf094b8a7e3615",
+      "fiserLogit": 0.9918277859687805,
+      "dearLogit": 1.423044115304947,
+      "score": 0.9318576587044994,
+      "logit": 2.615581304592388,
+      "componentScores": {
+        "fiser": 0.9115001155518245,
+        "dear_r": 0.9522152018571743
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Hybrid Images/2067.png",
+      "local": "images/Qwen Image 2.1/Hybrid Images/2067.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "2067",
+      "sha256": "1e9061120b6242b01d4055d46dcc522955749636229d3554894bb4a9bb0c607e",
+      "fiserLogit": 0.9733423590660095,
+      "dearLogit": 1.2595089673995972,
+      "score": 0.9211667581691501,
+      "logit": 2.458306323383288,
+      "componentScores": {
+        "fiser": 0.9082552985859742,
+        "dear_r": 0.934078217752326
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Hybrid Images/1122.png",
+      "local": "images/Qwen Image 2.1/Hybrid Images/1122.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "1122",
+      "sha256": "1b6852ff90a8f88f7240ce7eea9c63df4027e685b838cadfa66be64075b04677",
+      "fiserLogit": 0.42099636793136597,
+      "dearLogit": 0.41477949917316437,
+      "score": 0.7304826061731933,
+      "logit": 0.9970724906883761,
+      "componentScores": {
+        "fiser": 0.7521329374935268,
+        "dear_r": 0.7088322748528597
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Hybrid Images/0251.png",
+      "local": "images/Qwen Image 2.1/Hybrid Images/0251.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Hybrid Images",
+      "split": "validation",
+      "sourceGroup": "251",
+      "sha256": "59e121697e384b85721d9a266997e8fed6254f683fa92a23801894bbb29856ea",
+      "fiserLogit": 0.3361018896102905,
+      "dearLogit": 2.043647050857544,
+      "score": 0.8515766997655253,
+      "logit": 1.7470212440318253,
+      "componentScores": {
+        "fiser": 0.7167248562709697,
+        "dear_r": 0.9864285432600809
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2294.jpeg",
+      "local": "images/Real/Structure Images/2294.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2294",
+      "sha256": "e5df1bd3da7d6a2073c4f71e2746c8fd44e5dbcd870d543d761c7b0070d8405b",
+      "fiserLogit": -0.8160653710365295,
+      "dearLogit": 0.1675335317850113,
+      "score": 0.38462147774348987,
+      "logit": -0.4699778858559576,
+      "componentScores": {
+        "fiser": 0.1767745303612867,
+        "dear_r": 0.592468425125693
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1720.jpeg",
+      "local": "images/Real/Structure Images/1720.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "1720",
+      "sha256": "006db9b0a5ad0470604b34e46d542a16517f1ceb3fb3abbc0b1859374b25b871",
+      "fiserLogit": -0.7700223922729492,
+      "dearLogit": -1.5143364667892456,
+      "score": 0.11667782088845008,
+      "logit": -2.0242735339510256,
+      "componentScores": {
+        "fiser": 0.19157887900269843,
+        "dear_r": 0.04177676277420174
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/0252.jpeg",
+      "local": "images/Real/Structure Images/0252.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "252",
+      "sha256": "138537992cb5cb856c9eb4bcd2098a56f54e0ff85dd801e9c07c707720c23971",
+      "fiserLogit": -1.210123896598816,
+      "dearLogit": -1.301859736442566,
+      "score": 0.07407060343542027,
+      "logit": -2.525779247310468,
+      "componentScores": {
+        "fiser": 0.08455724742606109,
+        "dear_r": 0.06358395944477943
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2638.jpeg",
+      "local": "images/Real/Structure Images/2638.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2638",
+      "sha256": "5156091ed89ccf16106b27bda42c4156f00ef7a467687b8d70e82df09b296eeb",
+      "fiserLogit": -1.5449104309082031,
+      "dearLogit": -1.5827528238296509,
+      "score": 0.03979270238015911,
+      "logit": -3.1834656579759826,
+      "componentScores": {
+        "fiser": 0.04316049650252286,
+        "dear_r": 0.03642490825779536
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2075.jpeg",
+      "local": "images/Real/Structure Images/2075.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2075",
+      "sha256": "79a886aedbe4f668ec57771babae13f7413879786dd69240dbe3bdbd69dbe215",
+      "fiserLogit": -0.5919208526611328,
+      "dearLogit": -0.522759219010671,
+      "score": 0.25695994453037163,
+      "logit": -1.0618297388321014,
+      "componentScores": {
+        "fiser": 0.2575975330065093,
+        "dear_r": 0.25632235605423404
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2881.jpeg",
+      "local": "images/Real/Structure Images/2881.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2881",
+      "sha256": "c38e312e9e0489ec763e46130089d027aa1a43d0bf9cd830a2d78a7a5cb14dfe",
+      "fiserLogit": -1.3014132976531982,
+      "dearLogit": -0.5317490100860596,
+      "score": 0.16168579235885056,
+      "logit": -1.645738081135831,
+      "componentScores": {
+        "fiser": 0.07060605230584027,
+        "dear_r": 0.25276553241186084
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2521.jpeg",
+      "local": "images/Real/Structure Images/2521.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2521",
+      "sha256": "49bf01233735370f1dd07109ef715af4fe291cd1c3cd47432fc5e9addff7aca2",
+      "fiserLogit": 0.7374407649040222,
+      "dearLogit": -1.311733491718769,
+      "score": 0.4594937797922354,
+      "logit": -0.16238074046122936,
+      "componentScores": {
+        "fiser": 0.8566184770205428,
+        "dear_r": 0.06236908256392787
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/0404.jpeg",
+      "local": "images/Real/Structure Images/0404.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "404",
+      "sha256": "5b9d61396f504002f44f81a710393472bee990570a7a35231ac5d3d237f12df0",
+      "fiserLogit": -1.2402034997940063,
+      "dearLogit": -0.7976230978965759,
+      "score": 0.12120033285333828,
+      "logit": -1.9811121418053488,
+      "componentScores": {
+        "fiser": 0.07970402451994764,
+        "dear_r": 0.16269664118672894
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/0836.jpeg",
+      "local": "images/Real/Structure Images/0836.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "836",
+      "sha256": "e8d910fc55d4c12d61ae528fc175eaecad15ffb236c2078f511755f926626e63",
+      "fiserLogit": -1.4088349342346191,
+      "dearLogit": -1.5770119428634644,
+      "score": 0.04688672399732186,
+      "logit": -3.011999194172106,
+      "componentScores": {
+        "fiser": 0.056926058465703006,
+        "dear_r": 0.03684738952894072
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1599.jpeg",
+      "local": "images/Real/Structure Images/1599.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "1599",
+      "sha256": "38f65d5919297799e044dba3210c14c5585e1bd89c70fe2e6993c1e0597a8653",
+      "fiserLogit": 0.7146593928337097,
+      "dearLogit": -1.4209911823272705,
+      "score": 0.4504125871710579,
+      "logit": -0.19900381513925475,
+      "componentScores": {
+        "fiser": 0.8505233718559447,
+        "dear_r": 0.05030180248617111
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1974.jpeg",
+      "local": "images/Real/Structure Images/1974.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "1974",
+      "sha256": "a9a94133aacf1c717c381121c7b83e46aff32a7dc56084f4494374b1d0d80c52",
+      "fiserLogit": 0.47027039527893066,
+      "dearLogit": -1.2043246428171794,
+      "score": 0.42404735925478526,
+      "logit": -0.30618029103710875,
+      "componentScores": {
+        "fiser": 0.771272304237039,
+        "dear_r": 0.07682241427253159
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2067.jpeg",
+      "local": "images/Real/Structure Images/2067.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2067",
+      "sha256": "0e34c4e4f2eda105a876c7ccd92470ffda81032905a0fc3cdb04ba151f1e1d09",
+      "fiserLogit": -1.5477803945541382,
+      "dearLogit": -1.0699340105056763,
+      "score": 0.07105561813056907,
+      "logit": -2.570585943873661,
+      "componentScores": {
+        "fiser": 0.042907466836365024,
+        "dear_r": 0.09920376942477313
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2506.jpeg",
+      "local": "images/Real/Structure Images/2506.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2506",
+      "sha256": "49f126b01b6c7f0d5ba6c1652d7c11462d9de15b05f2751b03b2c5eaea961599",
+      "fiserLogit": -1.2311712503433228,
+      "dearLogit": -2.7781057357788086,
+      "score": 0.0421253297531188,
+      "logit": -3.1240677284265552,
+      "componentScores": {
+        "fiser": 0.08113397914861589,
+        "dear_r": 0.003116680357621712
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2380.jpeg",
+      "local": "images/Real/Structure Images/2380.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2380",
+      "sha256": "bd1b9236218216a20963cc23193ca513ae72775f48b8a226c2aa85633df5060c",
+      "fiserLogit": -1.2455687522888184,
+      "dearLogit": -0.017353177070617676,
+      "score": 0.288016054542622,
+      "logit": -0.9050391391209213,
+      "componentScores": {
+        "fiser": 0.07886555009958487,
+        "dear_r": 0.49716655898565915
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1826.jpeg",
+      "local": "images/Real/Structure Images/1826.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "1826",
+      "sha256": "3d519861a7218136a0e51bd0447fbe84e8c16c77a2612ea73952df483572680d",
+      "fiserLogit": -1.350756287574768,
+      "dearLogit": -1.1969233751296997,
+      "score": 0.0709524306337203,
+      "logit": -2.572150280995542,
+      "componentScores": {
+        "fiser": 0.0639807818779245,
+        "dear_r": 0.0779240793895161
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/1122.jpeg",
+      "local": "images/Real/Structure Images/1122.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "1122",
+      "sha256": "2f7d6c067077cb512a677aff87be67d1e8d58d1156c40071303fe84527ece423",
+      "fiserLogit": -0.8174344301223755,
+      "dearLogit": -1.1990587711334229,
+      "score": 0.1269765793055067,
+      "logit": -1.9279597287736867,
+      "componentScores": {
+        "fiser": 0.17634840505138205,
+        "dear_r": 0.07760475355963138
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2470.jpeg",
+      "local": "images/Real/Structure Images/2470.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2470",
+      "sha256": "228eb915f014e217d36a800c90ac9f8ee21eb9ad46aa7af7274b5e9a0b6b37de",
+      "fiserLogit": -1.0560522079467773,
+      "dearLogit": -1.2454577684402466,
+      "score": 0.09239660532933497,
+      "logit": -2.28471725405773,
+      "componentScores": {
+        "fiser": 0.11383701274927373,
+        "dear_r": 0.07095619790939621
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/0293.jpeg",
+      "local": "images/Real/Structure Images/0293.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "293",
+      "sha256": "eb32240c3d08252aca5db9358dbea3d2e89706fb1cdfe9a641bf260c665a2749",
+      "fiserLogit": -1.654061198234558,
+      "dearLogit": -1.9638701677322388,
+      "score": 0.025633036302022433,
+      "logit": -3.63790599205111,
+      "componentScores": {
+        "fiser": 0.03447670004408827,
+        "dear_r": 0.0167893725599566
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/2252.jpeg",
+      "local": "images/Real/Structure Images/2252.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2252",
+      "sha256": "c7ccf30f4b67b1b60acae77ced3808e816010098d3146ec74ce36b063d7b907c",
+      "fiserLogit": -1.1675890684127808,
+      "dearLogit": -0.49730151891708374,
+      "score": 0.17922456407436696,
+      "logit": -1.5216099795229132,
+      "componentScores": {
+        "fiser": 0.09187793131081791,
+        "dear_r": 0.266571196837916
+      }
+    },
+    {
+      "remote": "images/Real/Structure Images/0251.jpeg",
+      "local": "images/Real/Structure Images/0251.jpeg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "251",
+      "sha256": "73da00a94f3624efd7c119eef13060272219c046475355f781e60b2e2fefc685",
+      "fiserLogit": -1.4007824659347534,
+      "dearLogit": -1.4557679891586304,
+      "score": 0.05240358009208583,
+      "logit": -2.8949537828537495,
+      "componentScores": {
+        "fiser": 0.057858653766463805,
+        "dear_r": 0.04694850641770786
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Structure Images/2294.png",
+      "local": "images/FLUX.2/Structure Images/2294.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2294",
+      "sha256": "8aace82a908b1248e1a2500c939c3e938e8fedd0aa06bf351aa2090379b417cf",
+      "fiserLogit": 1.075351357460022,
+      "dearLogit": 0.5204644128680229,
+      "score": 0.8385239143997876,
+      "logit": 1.6472860463901078,
+      "componentScores": {
+        "fiser": 0.9249026154098582,
+        "dear_r": 0.7521452133897171
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Structure Images/2075.png",
+      "local": "images/FLUX.2/Structure Images/2075.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2075",
+      "sha256": "24f1bdc07b6452370a0a4c302b3ed4ba5005337fcb85fcc6442efd8bc812b887",
+      "fiserLogit": 2.2447803020477295,
+      "dearLogit": 3.2996193170547485,
+      "score": 0.996200501063697,
+      "logit": 5.569079344443482,
+      "componentScores": {
+        "fiser": 0.9934027676197859,
+        "dear_r": 0.9989982345076082
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Structure Images/0836.png",
+      "local": "images/FLUX.2/Structure Images/0836.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "836",
+      "sha256": "e38268565e7ee315464503b51d4d97bf498d2812f55e00ca66e40ff408354358",
+      "fiserLogit": 0.5502948760986328,
+      "dearLogit": 2.7200458645820618,
+      "score": 0.8983696565002179,
+      "logit": 2.1792394807602364,
+      "componentScores": {
+        "fiser": 0.8000857655655521,
+        "dear_r": 0.9966535474348838
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Structure Images/2506.png",
+      "local": "images/FLUX.2/Structure Images/2506.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2506",
+      "sha256": "5a25ffe45af933c0c26d0b6781bb1e621d6e8e1d6c910906183fbeb6151d9478",
+      "fiserLogit": 0.6143341660499573,
+      "dearLogit": 0.6562440693378448,
+      "score": 0.8111098909419504,
+      "logit": 1.457238133074678,
+      "componentScores": {
+        "fiser": 0.8211164075630973,
+        "dear_r": 0.8011033743208035
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Structure Images/2470.png",
+      "local": "images/FLUX.2/Structure Images/2470.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2470",
+      "sha256": "20114f8d6c5f267a2d8d2061988f7d29cc42a2e2b3b83ac4488c88b4e11110a3",
+      "fiserLogit": -0.03000982105731964,
+      "dearLogit": 1.430438905954361,
+      "score": 0.7444845564117315,
+      "logit": 1.069409255948832,
+      "componentScores": {
+        "fiser": 0.536057191605621,
+        "dear_r": 0.9529119212178421
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Structure Images/1720.png",
+      "local": "images/GPT Image 2/Structure Images/1720.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "1720",
+      "sha256": "b37092e2a20a90b85e70e5ca1bb6a8710f83324793cd3af71cafbf5d48950a9b",
+      "fiserLogit": 0.9086800217628479,
+      "dearLogit": 2.2027405500411987,
+      "score": 0.9431361248956284,
+      "logit": 2.8085503696552565,
+      "componentScores": {
+        "fiser": 0.8960496814641542,
+        "dear_r": 0.9902225683271025
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Structure Images/2881.png",
+      "local": "images/GPT Image 2/Structure Images/2881.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2881",
+      "sha256": "b87d19943f6cf73d70630ac0332a92c23cfe36faae09b63a5ffc21902f02f060",
+      "fiserLogit": 0.23177804052829742,
+      "dearLogit": 0.4682471826672554,
+      "score": 0.7002878968396798,
+      "logit": 0.8486691739308359,
+      "componentScores": {
+        "fiser": 0.6692800504998219,
+        "dear_r": 0.7312957431795378
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Structure Images/1599.png",
+      "local": "images/GPT Image 2/Structure Images/1599.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "1599",
+      "sha256": "986d398444273d2454af7d0c1bda3890f94133432a1d87fb0388fce56441f6ab",
+      "fiserLogit": 0.351487398147583,
+      "dearLogit": -1.0096304714679718,
+      "score": 0.4171922622594893,
+      "logit": -0.3343101749524053,
+      "componentScores": {
+        "fiser": 0.72336431679252,
+        "dear_r": 0.11102020772645863
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Structure Images/2380.png",
+      "local": "images/GPT Image 2/Structure Images/2380.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2380",
+      "sha256": "1903ea62d8d45b288a842de6ed177a85e673b8148603117533bafcffbcb82415",
+      "fiserLogit": 0.8024688959121704,
+      "dearLogit": 0.7090387642383575,
+      "score": 0.8454740630136299,
+      "logit": 1.6995355321789758,
+      "componentScores": {
+        "fiser": 0.8728836727121787,
+        "dear_r": 0.818064453315081
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Structure Images/0293.png",
+      "local": "images/GPT Image 2/Structure Images/0293.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "293",
+      "sha256": "1d7e55d405449005272046f21196a2c9eb4624288f55543f53fd4d87ff1c738b",
+      "fiserLogit": -0.060330696403980255,
+      "dearLogit": -0.2096802182495594,
+      "score": 0.4591136756628018,
+      "logit": -0.16391129660077494,
+      "componentScores": {
+        "fiser": 0.5198812199515781,
+        "dear_r": 0.3983461313740256
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Structure Images/0252.png",
+      "local": "images/Nano Banana 2/Structure Images/0252.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "252",
+      "sha256": "edbf9fa79f13d655e09e847e75ff024257f3cf262529520f55005d8d068066f7",
+      "fiserLogit": -1.2911261320114136,
+      "dearLogit": 0.061872102320194244,
+      "score": 0.305227291640797,
+      "logit": -0.8225280361796115,
+      "componentScores": {
+        "fiser": 0.07206498251503493,
+        "dear_r": 0.5383896007665591
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Structure Images/2521.png",
+      "local": "images/Nano Banana 2/Structure Images/2521.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2521",
+      "sha256": "0a09f3cb2caef46d8451b6ad9521190fbb1cca8a1c4510665af530ade2df7732",
+      "fiserLogit": 0.2976670265197754,
+      "dearLogit": 2.492656946182251,
+      "score": 0.8471798073923594,
+      "logit": 1.712650940905573,
+      "componentScores": {
+        "fiser": 0.699725216908225,
+        "dear_r": 0.9946343978764939
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Structure Images/1974.png",
+      "local": "images/Nano Banana 2/Structure Images/1974.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "1974",
+      "sha256": "c7b81b66b6f8a431149fc722be879bb40af40c0313da81b282fa8d350d501f41",
+      "fiserLogit": -0.5883588194847107,
+      "dearLogit": -0.22263383492827415,
+      "score": 0.32547472667038424,
+      "logit": -0.7287243306747044,
+      "componentScores": {
+        "fiser": 0.25905859518355895,
+        "dear_r": 0.3918908581572096
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Structure Images/1826.png",
+      "local": "images/Nano Banana 2/Structure Images/1826.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "1826",
+      "sha256": "3bfe188d0c1d19d57d960b602606371691574bfcc0940a0b83d694820cd8675d",
+      "fiserLogit": -0.09477446973323822,
+      "dearLogit": 0.08984392881393433,
+      "score": 0.5271526427611305,
+      "logit": 0.10871752686980274,
+      "componentScores": {
+        "fiser": 0.5014568823659884,
+        "dear_r": 0.5528484031562726
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Structure Images/2252.png",
+      "local": "images/Nano Banana 2/Structure Images/2252.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2252",
+      "sha256": "72cc2c24f9dd5d526d29bcdf3d1ee73f6e24e5a9d03766c24ad37b4f2e5a5a57",
+      "fiserLogit": -0.6448717713356018,
+      "dearLogit": 1.5315485298633575,
+      "score": 0.5990191779681949,
+      "logit": 0.4013800134385157,
+      "componentScores": {
+        "fiser": 0.23652010576243407,
+        "dear_r": 0.9615182501739558
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Structure Images/2638.png",
+      "local": "images/Qwen Image 2.1/Structure Images/2638.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2638",
+      "sha256": "07b392b35bd50abe687538cbefe59aa1e40d7f3f75cd951ef847364a335baeba",
+      "fiserLogit": 0.8611945509910583,
+      "dearLogit": 1.4209668040275574,
+      "score": 0.9191049766645019,
+      "logit": 2.430248039140579,
+      "componentScores": {
+        "fiser": 0.8861922258114105,
+        "dear_r": 0.9520177275175933
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Structure Images/0404.png",
+      "local": "images/Qwen Image 2.1/Structure Images/0404.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "404",
+      "sha256": "73bda8e18df30e5da8a86b52597b0f33f359bc4ae8b29ed272ffe18089b12e7d",
+      "fiserLogit": 0.8019385933876038,
+      "dearLogit": 1.1504659354686737,
+      "score": 0.8956880477603026,
+      "logit": 2.150206241110052,
+      "componentScores": {
+        "fiser": 0.8727576486589126,
+        "dear_r": 0.9186184468616926
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Structure Images/2067.png",
+      "local": "images/Qwen Image 2.1/Structure Images/2067.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "2067",
+      "sha256": "9b4d2aa07c81d6c622ff21dce31673b6fff66ee774dfda5791e5d34a06a8e371",
+      "fiserLogit": 0.8806042671203613,
+      "dearLogit": 1.124424308538437,
+      "score": 0.902391006007114,
+      "logit": 2.224078273206883,
+      "componentScores": {
+        "fiser": 0.8903163494971371,
+        "dear_r": 0.9144656625170908
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Structure Images/1122.png",
+      "local": "images/Qwen Image 2.1/Structure Images/1122.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "1122",
+      "sha256": "87bf125b6ed9860231f2cb718a12de5b2f2763b19f42677c13f2923784c43dbc",
+      "fiserLogit": 0.8325902819633484,
+      "dearLogit": 0.998827800154686,
+      "score": 0.885751022386706,
+      "logit": 2.0480558169518095,
+      "componentScores": {
+        "fiser": 0.879868482934161,
+        "dear_r": 0.891633561839251
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Structure Images/0251.png",
+      "local": "images/Qwen Image 2.1/Structure Images/0251.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Structure Images",
+      "split": "validation",
+      "sourceGroup": "251",
+      "sha256": "e1b56a78d67c7c64c04d127d2c1f4cd73a74a6888a31e0601de885c25cae807f",
+      "fiserLogit": 1.0440844297409058,
+      "dearLogit": 0.7880287021398544,
+      "score": 0.8807135146710562,
+      "logit": 1.999204351457764,
+      "componentScores": {
+        "fiser": 0.9201189729936615,
+        "dear_r": 0.8413080563484509
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2294.jpg",
+      "local": "images/Real/Texture Images/2294.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2294",
+      "sha256": "17d81dfc80cc33ba762a6f78805aaf22e9812a2af92e5358ceb2f684780066ba",
+      "fiserLogit": -1.4074913263320923,
+      "dearLogit": -0.5084640979766846,
+      "score": 0.15956303308701034,
+      "logit": -1.661482919361568,
+      "componentScores": {
+        "fiser": 0.057080680422184636,
+        "dear_r": 0.26204538575183606
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1720.jpg",
+      "local": "images/Real/Texture Images/1720.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "1720",
+      "sha256": "1178086f556a6137096a09844cb7594d694895e4aa94f337efeba339dd3725d4",
+      "fiserLogit": -1.7260485887527466,
+      "dearLogit": -2.307680368423462,
+      "score": 0.018983762176731128,
+      "logit": -3.945005020254359,
+      "componentScores": {
+        "fiser": 0.02969875673517883,
+        "dear_r": 0.008268767618283426
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/0252.jpg",
+      "local": "images/Real/Texture Images/0252.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "252",
+      "sha256": "fee6dd9775522f3789e768f4797d56ebd19ad5de025e4c79f2591fc8e50e58f9",
+      "fiserLogit": -0.8944806456565857,
+      "dearLogit": -1.412176489830017,
+      "score": 0.10242015959901692,
+      "logit": -2.1706185107569063,
+      "componentScores": {
+        "fiser": 0.15365319337708574,
+        "dear_r": 0.05118712582094808
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2638.jpg",
+      "local": "images/Real/Texture Images/2638.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2638",
+      "sha256": "1607bd88ef6ed8e88cf926a0913d7e16fe9992be1bd3eddcd76233e5e64bc091",
+      "fiserLogit": -1.180338978767395,
+      "dearLogit": -0.7715240120887756,
+      "score": 0.12993625799545488,
+      "logit": -1.9015224685406376,
+      "componentScores": {
+        "fiser": 0.0896257009587546,
+        "dear_r": 0.17024681503215514
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2075.jpg",
+      "local": "images/Real/Texture Images/2075.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2075",
+      "sha256": "becf599b6a6796c49508de45e09df0a26d451994aae06cb63d4a16c89a0e51ac",
+      "fiserLogit": 0.11556822061538696,
+      "dearLogit": -0.10394690061608951,
+      "score": 0.5321359335265055,
+      "logit": 0.12872117337718822,
+      "componentScores": {
+        "fiser": 0.6120984879535558,
+        "dear_r": 0.45217337909945515
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2881.jpg",
+      "local": "images/Real/Texture Images/2881.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2881",
+      "sha256": "bf73a0d24c6754f503888e8c98c33ff7d47da17d4e07268e380d62cf4ca3076d",
+      "fiserLogit": -1.6814526319503784,
+      "dearLogit": -2.0186948776245117,
+      "score": 0.023789984117423425,
+      "logit": -3.7144130867737277,
+      "componentScores": {
+        "fiser": 0.03257705051062271,
+        "dear_r": 0.015002917724224147
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2521.jpg",
+      "local": "images/Real/Texture Images/2521.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2521",
+      "sha256": "5e6dca7787488ccbb5eeb2b46c8be835bbd6418cc354fa0f763a77775d94f871",
+      "fiserLogit": -0.9010716080665588,
+      "dearLogit": -0.9262281656265259,
+      "score": 0.14060327056429897,
+      "logit": -1.8102884251092937,
+      "componentScores": {
+        "fiser": 0.1518271858823034,
+        "dear_r": 0.12937935524629454
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/0404.jpg",
+      "local": "images/Real/Texture Images/0404.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "404",
+      "sha256": "96f4682e7066b1801436016483e27523e919cfb324b001152b9d14aa7f8e04a7",
+      "fiserLogit": -1.3961738348007202,
+      "dearLogit": -2.1600258350372314,
+      "score": 0.03480767824261903,
+      "logit": -3.3224893770409443,
+      "componentScores": {
+        "fiser": 0.05839883524417749,
+        "dear_r": 0.011216521241060581
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/0836.jpg",
+      "local": "images/Real/Texture Images/0836.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "836",
+      "sha256": "753cbf2353fb6bf3465cad61715d83b6e1783a4dfa0e6c7c4e7f52b824f0a5e3",
+      "fiserLogit": -1.2964229583740234,
+      "dearLogit": -1.032375454902649,
+      "score": 0.08886772997424294,
+      "logit": -2.327538994639023,
+      "componentScores": {
+        "fiser": 0.07131034436537415,
+        "dear_r": 0.10642511558311175
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1599.jpg",
+      "local": "images/Real/Texture Images/1599.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "1599",
+      "sha256": "b9fb7ea12bca63118b168c67bae54ce92ebebcc3f0768bfd4f3b8972cf558118",
+      "fiserLogit": -1.4885791540145874,
+      "dearLogit": -0.5044755935668945,
+      "score": 0.1560406615119822,
+      "logit": -1.6879876922846277,
+      "componentScores": {
+        "fiser": 0.04842452214425635,
+        "dear_r": 0.26365680087970805
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1974.jpg",
+      "local": "images/Real/Texture Images/1974.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "1974",
+      "sha256": "5af0f8b26f08d8cd6acce85bca71b8cce6c260dd823e493406583b094510de9b",
+      "fiserLogit": -0.358537495136261,
+      "dearLogit": -0.25357115268707275,
+      "score": 0.37022127351446754,
+      "logit": -0.5312676664786272,
+      "componentScores": {
+        "fiser": 0.363813109410487,
+        "dear_r": 0.37662943761844814
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2067.jpg",
+      "local": "images/Real/Texture Images/2067.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2067",
+      "sha256": "3ceb7e4eba9101d03b78d88a2ae14fefea65d909061d00f488221e2dc0945eeb",
+      "fiserLogit": -1.5550199747085571,
+      "dearLogit": -1.0486931800842285,
+      "score": 0.07275397479548344,
+      "logit": -2.545135388788175,
+      "componentScores": {
+        "fiser": 0.04227547151635648,
+        "dear_r": 0.1032324780746104
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2506.jpg",
+      "local": "images/Real/Texture Images/2506.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2506",
+      "sha256": "a3c8d4f0c91f70f7f1b863f94d587fb94c2fd2a2ad245b1906b34e3100975f89",
+      "fiserLogit": -1.4205584526062012,
+      "dearLogit": -0.16574521362781525,
+      "score": 0.2380431601887099,
+      "logit": -1.163437910853793,
+      "componentScores": {
+        "fiser": 0.05559352665763332,
+        "dear_r": 0.4204927937197865
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2380.jpg",
+      "local": "images/Real/Texture Images/2380.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2380",
+      "sha256": "7eee45c5239e5e71f4dcedb643f1f815be73dc43a36e913eb378c77794c4dbb4",
+      "fiserLogit": -1.2606772184371948,
+      "dearLogit": -1.1563258171081543,
+      "score": 0.08038774560513945,
+      "logit": -2.4370903718668577,
+      "componentScores": {
+        "fiser": 0.07654759131321369,
+        "dear_r": 0.0842278998970652
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1826.jpg",
+      "local": "images/Real/Texture Images/1826.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "1826",
+      "sha256": "f9294bb65a95c5bd96d307aec55c9e06add1ff2752d05314858e4876f4c69a03",
+      "fiserLogit": -0.7081406712532043,
+      "dearLogit": -2.655925989151001,
+      "score": 0.10847789647879412,
+      "logit": -2.1063837974884,
+      "componentScores": {
+        "fiser": 0.21293843143999025,
+        "dear_r": 0.004017361517597989
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/1122.jpg",
+      "local": "images/Real/Texture Images/1122.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "1122",
+      "sha256": "696a81df203cf6c4f6b0d3eda1b5f39e97fb66a666afb9718c5cad9f2e8f573f",
+      "fiserLogit": -0.48423105478286743,
+      "dearLogit": -0.05351339280605316,
+      "score": 0.3912051577882123,
+      "logit": -0.4422492118507925,
+      "componentScores": {
+        "fiser": 0.3040799032425325,
+        "dear_r": 0.4783304123338922
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2470.jpg",
+      "local": "images/Real/Texture Images/2470.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2470",
+      "sha256": "424fbb5f65a995a46dc52c117fc47661610d27469af99bb79eca72da61250769",
+      "fiserLogit": -1.125813364982605,
+      "dearLogit": -0.973242998123169,
+      "score": 0.10917491430418694,
+      "logit": -2.099196781417218,
+      "componentScores": {
+        "fiser": 0.09961748161618568,
+        "dear_r": 0.1187323469921882
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/0293.jpg",
+      "local": "images/Real/Texture Images/0293.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "293",
+      "sha256": "3c7f80dcf5f7672f8be517daaed4c7b91c68813a7b901af2bb810071f1108669",
+      "fiserLogit": -1.2352668046951294,
+      "dearLogit": -0.6195562481880188,
+      "score": 0.15012643031411493,
+      "logit": -1.7336097890326025,
+      "componentScores": {
+        "fiser": 0.0804827092432377,
+        "dear_r": 0.21977015138499215
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/2252.jpg",
+      "local": "images/Real/Texture Images/2252.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2252",
+      "sha256": "00d83e083067be3944df4f88356db1ae1c4ab855647bf488affc7709e758884e",
+      "fiserLogit": -0.87016361951828,
+      "dearLogit": -1.3967657089233398,
+      "score": 0.10665818384970764,
+      "logit": -2.1253401029280554,
+      "componentScores": {
+        "fiser": 0.16054591564390341,
+        "dear_r": 0.052770452055511875
+      }
+    },
+    {
+      "remote": "images/Real/Texture Images/0251.jpg",
+      "local": "images/Real/Texture Images/0251.jpg",
+      "label": 0,
+      "generator": "Real",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "251",
+      "sha256": "6d3be7b7314984daa038b285ae50ec3425c51d4ea566ffb41c1f8ba9e5fbaf49",
+      "fiserLogit": -0.4668739438056946,
+      "dearLogit": -2.5142440795898438,
+      "score": 0.15869538608906128,
+      "logit": -1.6679672448583802,
+      "componentScores": {
+        "fiser": 0.3120000955142964,
+        "dear_r": 0.005390676663826143
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Texture Images/2294.png",
+      "local": "images/FLUX.2/Texture Images/2294.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2294",
+      "sha256": "367457b5630856cfcd18042b7fc56b9acca0392bf975c0d59b49c207da89f659",
+      "fiserLogit": 2.5730199813842773,
+      "dearLogit": 0.2518705800175667,
+      "score": 0.8154325602968122,
+      "logit": 1.4857037977354979,
+      "componentScores": {
+        "fiser": 0.9967218779194718,
+        "dear_r": 0.6341432426741527
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Texture Images/2075.png",
+      "local": "images/FLUX.2/Texture Images/2075.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2075",
+      "sha256": "26f131c03c67666f127b77575442d7ea5239df54aeef87bc7917427e325987be",
+      "fiserLogit": 2.772587776184082,
+      "dearLogit": 1.9259019494056702,
+      "score": 0.9902882032195996,
+      "logit": 4.6246547056161855,
+      "componentScores": {
+        "fiser": 0.9978592322499102,
+        "dear_r": 0.9827171741892892
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Texture Images/0836.png",
+      "local": "images/FLUX.2/Texture Images/0836.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "836",
+      "sha256": "98f98023a876890dabfce3858d3767b68894879d4f71ad847dd00ba615829732",
+      "fiserLogit": 2.590512990951538,
+      "dearLogit": 1.7230620682239532,
+      "score": 0.9853492075245951,
+      "logit": 4.208501675864138,
+      "componentScores": {
+        "fiser": 0.9968419929557607,
+        "dear_r": 0.9738564220934296
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Texture Images/2506.png",
+      "local": "images/FLUX.2/Texture Images/2506.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2506",
+      "sha256": "d7cad0351a841695a58bf890d10daba8df47dd276dfef097d062c7235f3317ce",
+      "fiserLogit": 2.6826064586639404,
+      "dearLogit": 1.577293038368225,
+      "score": 0.9811509376767011,
+      "logit": 3.952263140231697,
+      "componentScores": {
+        "fiser": 0.9974056209242417,
+        "dear_r": 0.9648962544291605
+      }
+    },
+    {
+      "remote": "images/FLUX.2/Texture Images/2470.png",
+      "local": "images/FLUX.2/Texture Images/2470.png",
+      "label": 1,
+      "generator": "FLUX.2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2470",
+      "sha256": "0a2f0f726738dd5c719af9470418b36b82cfdb3e372b2c58e936942ea7c4f2da",
+      "fiserLogit": 2.905273199081421,
+      "dearLogit": 2.205150157213211,
+      "score": 0.9943294198267503,
+      "logit": 5.166777124199936,
+      "componentScores": {
+        "fiser": 0.9983877460556716,
+        "dear_r": 0.990271093597829
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Texture Images/1720.png",
+      "local": "images/GPT Image 2/Texture Images/1720.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "1720",
+      "sha256": "c7b69d0216e5704acb4710d9cab294d06ced480284a172b3ba7e3935c8879daf",
+      "fiserLogit": -0.48634010553359985,
+      "dearLogit": 0.23503630608320236,
+      "score": 0.4645435215032885,
+      "logit": -0.14206436469326955,
+      "componentScores": {
+        "fiser": 0.303125267756849,
+        "dear_r": 0.625961775249728
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Texture Images/2881.png",
+      "local": "images/GPT Image 2/Texture Images/2881.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2881",
+      "sha256": "b86207ad3fea71389c66183c4fa77aa479df1b17914c8e92c5f9887a4ac44689",
+      "fiserLogit": 2.192704200744629,
+      "dearLogit": 0.48051605746150017,
+      "score": 0.8644616452493608,
+      "logit": 1.8528522765857203,
+      "componentScores": {
+        "fiser": 0.9926304247333544,
+        "dear_r": 0.7362928657653672
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Texture Images/1599.png",
+      "local": "images/GPT Image 2/Texture Images/1599.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "1599",
+      "sha256": "886c985b43fee6253db7a14398f4893e540c55074abfed3e1b455996acd97e02",
+      "fiserLogit": 1.4172812700271606,
+      "dearLogit": 1.6473605036735535,
+      "score": 0.9659702696442108,
+      "logit": 3.3458984922122204,
+      "componentScores": {
+        "fiser": 0.962418109146339,
+        "dear_r": 0.9695224301420827
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Texture Images/2380.png",
+      "local": "images/GPT Image 2/Texture Images/2380.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2380",
+      "sha256": "47ec4177aecb54f5f1849a7bad828135bef892b2533b8c4726bfdbb3d97b43aa",
+      "fiserLogit": 0.8009315133094788,
+      "dearLogit": 1.429869458079338,
+      "score": 0.9126883204493744,
+      "logit": 2.346910202465209,
+      "componentScores": {
+        "fiser": 0.8725180267331153,
+        "dear_r": 0.9528586141656336
+      }
+    },
+    {
+      "remote": "images/GPT Image 2/Texture Images/0293.png",
+      "local": "images/GPT Image 2/Texture Images/0293.png",
+      "label": 1,
+      "generator": "GPT Image 2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "293",
+      "sha256": "ed3101f29ffb9f9a9ea6389458e6ed4fca60fdf32518ddc530619e72305d628f",
+      "fiserLogit": 2.4927310943603516,
+      "dearLogit": 0.30659696211417514,
+      "score": 0.8281501466639993,
+      "logit": 1.5725733246429712,
+      "componentScores": {
+        "fiser": 0.9961094779258695,
+        "dear_r": 0.6601908154021291
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Texture Images/0252.png",
+      "local": "images/Nano Banana 2/Texture Images/0252.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "252",
+      "sha256": "2dcc3e5fa9720ea002a7a38bfd4997d45f1ef054615e4bdee60619fa456d61ad",
+      "fiserLogit": 0.3155962824821472,
+      "dearLogit": 7.486311197280884,
+      "score": 0.85386379159063,
+      "logit": 1.7652325653370429,
+      "componentScores": {
+        "fiser": 0.7077277453235977,
+        "dear_r": 0.9999998378576621
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Texture Images/2521.png",
+      "local": "images/Nano Banana 2/Texture Images/2521.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2521",
+      "sha256": "1664ba4f4728df1ef85e5223e4ed0293ad8f3e7d9a83abccbcda410d210e9ae9",
+      "fiserLogit": 0.8592460751533508,
+      "dearLogit": 3.421999156475067,
+      "score": 0.9424972578805313,
+      "logit": 2.796700374206899,
+      "componentScores": {
+        "fiser": 0.8857708373346148,
+        "dear_r": 0.9992236784264479
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Texture Images/1974.png",
+      "local": "images/Nano Banana 2/Texture Images/1974.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "1974",
+      "sha256": "76aedc60fccae4d52fc5c8866e245805d476752be62657ad7a03a0dda6774317",
+      "fiserLogit": 0.3296399712562561,
+      "dearLogit": 2.284717947244644,
+      "score": 0.8528269318416262,
+      "logit": 1.756947404727859,
+      "componentScores": {
+        "fiser": 0.7139077209898841,
+        "dear_r": 0.9917461426933681
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Texture Images/1826.png",
+      "local": "images/Nano Banana 2/Texture Images/1826.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "1826",
+      "sha256": "4fb121b3c5962555e52bff6f7d09b161da63cf76591fcecd3164e8265fdecb2e",
+      "fiserLogit": -0.17122386395931244,
+      "dearLogit": 2.1805518567562103,
+      "score": 0.7251930320442717,
+      "logit": 0.970368954023071,
+      "componentScores": {
+        "fiser": 0.46062175058389754,
+        "dear_r": 0.9897643135046458
+      }
+    },
+    {
+      "remote": "images/Nano Banana 2/Texture Images/2252.png",
+      "local": "images/Nano Banana 2/Texture Images/2252.png",
+      "label": 1,
+      "generator": "Nano Banana 2",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2252",
+      "sha256": "9e15bef5e77c10bf5fcaba1f1ec7a93c6966fbb02214e06c0e29b7437c9f020e",
+      "fiserLogit": -0.40096163749694824,
+      "dearLogit": 3.260007321834564,
+      "score": 0.6709872900065644,
+      "logit": 0.712653812706211,
+      "componentScores": {
+        "fiser": 0.34306250684156325,
+        "dear_r": 0.9989120731715656
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Texture Images/2638.png",
+      "local": "images/Qwen Image 2.1/Texture Images/2638.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2638",
+      "sha256": "9c6d64a9ca4c636eec7b22f1dc3996a714728c299a53fad3d48052ede055ca76",
+      "fiserLogit": 1.1357181072235107,
+      "dearLogit": 0.39708928763866425,
+      "score": 0.8172808671897083,
+      "logit": 1.4980326340184584,
+      "componentScores": {
+        "fiser": 0.9334006341910642,
+        "dear_r": 0.7011611001883523
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Texture Images/0404.png",
+      "local": "images/Qwen Image 2.1/Texture Images/0404.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "404",
+      "sha256": "427e913a08a5ad1136556534e9085c2919e4d30c9c5b14183a18dcaf5fc421ef",
+      "fiserLogit": 1.2097842693328857,
+      "dearLogit": 2.9907933473587036,
+      "score": 0.9703500903043794,
+      "logit": 3.488197844461621,
+      "componentScores": {
+        "fiser": 0.9426057892476708,
+        "dear_r": 0.9980943913610878
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Texture Images/2067.png",
+      "local": "images/Qwen Image 2.1/Texture Images/2067.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "2067",
+      "sha256": "2f1e3c6123bf016f551c8e8a8560f1dfe8c12f7d06af8a9174373660955e5a82",
+      "fiserLogit": 2.2856976985931396,
+      "dearLogit": 1.5500379800796509,
+      "score": 0.9784361875633448,
+      "logit": 3.8149390105933345,
+      "componentScores": {
+        "fiser": 0.9939527399035266,
+        "dear_r": 0.962919635223163
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Texture Images/1122.png",
+      "local": "images/Qwen Image 2.1/Texture Images/1122.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "1122",
+      "sha256": "42eb35748e459ca57f9575e35a63580d1b5b631c2059017ab8421c0dc12f09f3",
+      "fiserLogit": 1.580204725265503,
+      "dearLogit": 1.2085979133844376,
+      "score": 0.950210191084059,
+      "logit": 2.948872891047487,
+      "componentScores": {
+        "fiser": 0.9731878745709459,
+        "dear_r": 0.9272325075971721
+      }
+    },
+    {
+      "remote": "images/Qwen Image 2.1/Texture Images/0251.png",
+      "local": "images/Qwen Image 2.1/Texture Images/0251.png",
+      "label": 1,
+      "generator": "Qwen Image 2.1",
+      "style": "Texture Images",
+      "split": "validation",
+      "sourceGroup": "251",
+      "sha256": "e940b47fbdaae2438d2d17e1dbe8ae866bfabf17a692d6955b19c273b0139b02",
+      "fiserLogit": 2.7149219512939453,
+      "dearLogit": 1.2961066961288452,
+      "score": 0.9681014893921283,
+      "logit": 3.412777606901736,
+      "componentScores": {
+        "fiser": 0.9975786197948652,
+        "dear_r": 0.9386243589893914
+      }
+    }
+  ],
+  "runtimeOptimizationVerification": {
+    "images": 120,
+    "maxFiserLogitDifference": 2.558229152960223e-07,
+    "maxCombinedScoreDifference": 2.376279384375124e-08,
+    "flagsChanged": 0,
+    "dearRecomputed": false,
+    "note": "DEAR implementation, inputs, weights and calibration unchanged. Saved DEAR logits reused for combination parity."
+  }
+}

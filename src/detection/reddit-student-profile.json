@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "kind": "reddit-student",
+  "model": "reddit-student-last2-v1",
+  "pipeline": "community-vit-s224-supervised-last2-v1",
+  "checkpointSha256": "ebbffb11fa562af2fc0cd3300d50e6a676a83394f45977f6f455e777113035d6",
+  "sourceCheckpointSha256": "a6cc439d5a6d2dfadd60c77d27a2838ad55b34e601ecd30f46ad97266d6ac4e0",
+  "checkpointPath": "artifacts/reddit-adaptation-2026-10-14/models/student-ebbffb11fa562af2fc0cd3300d50e6a676a83394f45977f6f455e777113035d6.safetensors",
+  "logitOffset": 4.092516763305665,
+  "threshold": 0.5,
+  "trainingHash": "612b6468215f5ddf5785186b88ede252c9cf217489ddbfad7845c27396600415",
+  "modelHash": "2a51064a2c346b950b513c7e5610138d2c5ede4520edfbec674180333ac089f4"
+}

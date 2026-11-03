@@ -1,0 +1,14 @@
+{
+  "family": "DM Sans",
+  "weights": [
+    400,
+    700
+  ],
+  "subset": "latin",
+  "source": "https://fonts.gstatic.com/s/dmsans/v17/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2",
+  "catalog": "https://fonts.google.com/specimen/DM+Sans",
+  "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/dmsans/OFL.txt",
+  "sha256": "468d56b6b25b05b70190b6c233d773f6f1770e8579827ce022a57f03fa8002fb",
+  "bytes": 36980,
+  "usage": "Bundled locally; no runtime font request to Google."
+}

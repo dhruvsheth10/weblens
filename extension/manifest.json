@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit Lens — experimental image detector",
+  "version": "0.1.4",
+  "description": "Local AI image detection for Reddit with an image lab and benchmark tools. Experimental scores, no API keys.",
+  "minimum_chrome_version": "120",
+  "permissions": ["storage", "offscreen"],
+  "host_permissions": ["https://i.redd.it/*", "https://preview.redd.it/*", "https://external-preview.redd.it/*", "http://127.0.0.1:8000/*"],
+  "background": {"service_worker": "background.js", "type": "module"},
+  "action": {"default_popup": "popup.html", "default_title": "Reddit Lens"},
+  "options_page": "index.html",
+  "content_scripts": [{"matches": ["https://www.reddit.com/*", "https://old.reddit.com/*", "https://new.reddit.com/*", "https://reddit.com/*"], "js": ["content.js"], "run_at": "document_idle"}],
+  "web_accessible_resources": [{"resources": ["fonts/google-sans-latin.woff2"], "matches": ["https://www.reddit.com/*", "https://old.reddit.com/*", "https://new.reddit.com/*", "https://reddit.com/*"]}],
+  "content_security_policy": {"extension_pages": "script-src 'self'; object-src 'self'; worker-src 'self';"}
+}

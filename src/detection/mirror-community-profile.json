@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "kind": "mirror-hybrid",
+  "model": "mirror-community-v1",
+  "checkpointSha256": "829ef07b52caa26c1cb3917e603a275cfd1c7f494f7b750f86fb218710ac66d5",
+  "upstreamCommit": "adb928ec56c4ffd77c53ccb908bea29bb559922c",
+  "threshold": 0.5,
+  "pipeline": "mirror-h-fp32-eager-shortmax512-crop224-pngjpeg96-or-community-v1",
+  "mirrorHash": "8e96ce9b9b1b3c3ef5441bf1ea7f69ef4172ba08386e2abea9289183f55f8f5d",
+  "communityHash": "d23790ed63e8f330c7cf2770800ac0c65f81b627cced81a7a3bd3248ff532388",
+  "componentThresholds": {
+    "mirror": 0.5,
+    "community": 0.5
+  },
+  "modelHash": "c587283908c9bdabdbd9f884ceb9e25baed3652ff970e123fe1f1bc406b91862"
+}
